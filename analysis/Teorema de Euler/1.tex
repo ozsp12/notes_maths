@@ -1,0 +1,83 @@
+\section{Interpretação Geométrica}
+
+\subsection{Introdução}
+
+Seja o seguinte sistema de equações (vetorial):
+%
+%
+\[\deri{u}{t} = Au\]
+
+A matriz fundamental, U(t), descreve completamente as soluções do sistema de equações
+acima. A interpretação geométrica da matriz U(t) é de que ela represente uma deformação
+do espaço vetorial, $\R^n$, com o passar do tempo, t, onde cada ponto é deslocado através
+de uma trajetória, $u(t) = U(t)x_0$, onde $x(0) = x_0$ é a posição inicial. A velocidade
+desse deslocamento é dado pela seguinte relação:
+%
+%
+\[\deri{u}{t} = \deri{U}{t}x_0 = A(t)u(t)\]
+
+A equação acima nos diz que a velocidade desse deslocamento é bem determinada em cada
+ponto, descrita por, $A(t)u(t)$. Dessa maneira $A(t)x$ pode ser interpretada como um
+campo vetorial em $\R^n$ que varia com o tempo, a cada ponto $x\in\R^n$ e a cada instante
+t. A trajetória $U(t)x$ tangencia o campo vetorial $A(t)x$ em cada ponto.
+
+Se $A(t)$ for constante, então o campo vetoriall está fixo no tempo, e poderá variar
+apenas ponto a ponto no espaço. Segundo a interpretação de deformação de $U(t)x$, pode-se
+pensar numa região $\Omega$ que será transladada pela matriz $U(t)$ até uma região
+$\Omega_t$, sendo modificada com o passar do tempo.
+
+Para analisar a variação de volume dessa translação $\Omega \to \Omega_t$, deve-se
+lembrar que o volume da região $\Omega_t$ é dado pela seguinte relação:
+%
+%
+\[V_{\Omega_t} = \int_{\Omega_t}dx\]
+
+Fazendo a mudança de variáveis (jacobiano), $x(t) = U(t)x_0$, encontra-se que:
+%
+%
+\[V_{\Omega_t} = \int_{\Omega_t}dx = \int_{\Omega_0}\left|\deli{x}{x_0}\right|dx_0\]
+
+Lembrando que o termo no integrando nada mais é do que o Jacobiano (transformação de
+coordenadas), que será representado por:
+%
+%
+\[\varphi(t) = \det U(t) = \left|\deli{x}{x_0}\right|\]
+
+De forma que tenha-se:
+%
+%
+\[V_{\Omega_t} = \int_{\Omega_0}\varphi(t)dx_0\]
+
+Para encontrar a variação de volume da região $\Omega_t$, deve-se derivar em relação ao
+tempo, de forma que tenha-se:
+%
+%
+\[\deri{V_{\Omega_t}}{t} = \deri{}{t}\int_{\Omega_0}\varphi(t)dx_0 =
+\int_{\Omega_0}\deri{\varphi(t)}{t}dx_0\]
+
+O teorema de Euler diz que:
+%
+%
+\[\deri{\varphi}{t} = \varphi \traco(U^{-1}\deri{U}{t})\]
+
+Onde $\varphi = \det U(t)$ e $\traco(U)$ é o traço da matriz $U(t)$, representado por:
+%
+%
+\[\traco(U) = \sum_{k = 1}^{n}U_{kk}\]
+
+No caso particular no qual $U' = AU$, tem-se que:
+%
+%
+\[\deri{\varphi}{t} = \varphi \traco(U^{-1}\deri{U}{t}) = \varphi
+\traco(U^{-1}AU)\]
+
+Lembrando da propriedade comutativa do traço, ou seja, $\traco(AB) = \traco(BA)$, tem-se
+que:
+%
+%
+\[\traco(U^{-1}AU) = \traco(A)\]
+
+Dessa maneira, tem-se que:
+%
+%
+\[\deri{V_{\Omega_t}}{t} = \int_{\Omega_0}\deri{\varphi(t)}{t}dx_0\]

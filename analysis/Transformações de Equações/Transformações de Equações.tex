@@ -1,0 +1,66 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[portuges]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath,amsfonts,mathrsfs,amssymb}
+\usepackage{multicol}
+\usepackage[latin1]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{makeidx}
+\makeindex
+\numberwithin{equation}{section}
+
+\setlength{\textwidth}{150mm}
+\setlength{\textheight}{210mm}
+\setlength{\headheight}{16pt}
+\renewcommand{\baselinestretch}{1.2}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\newcommand{\cqd}{{{\hfill $\rule{2.5mm}{2.5mm}$}}\vspace{1cm}\\}
+\newcommand{\sen}{\mathrm{sen}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\I}{\mathbb{I}}
+
+\newcommand{\diff}{\text{d}}
+\newcommand{\te}{\text{t}}
+\newcommand{\di}{\mbox{d}}
+\newcommand{\x}{x^*}
+\newcommand{\versor}[1]{{\bf #1}}
+\newcommand{\y}{y^*}
+\newcommand{\e}{{\bf e}}
+\newcommand{\ve}{{\bf v}}
+
+\newcommand{\deli}[2]{\ensuremath\frac{\partial#1}{\partial#2}}
+\newcommand{\deri}[2]{\ensuremath\frac{d#1}{d#2}}
+\newcommand{\nt}[4]{\ensuremath{ \int_{#1}^{#2} #3 \, \mbox{d}#4}}
+
+\newcommand{\raiotres}{\sqrt{x^2 + y^2 + z^2}}
+\newcommand{\coordn}[1]{(#1_1,\dotsc,#1_n)}
+\newcommand{\setn}[1]{(#1_1,\dotsc,#1_n)}
+\newcommand{\prodintn}[2]{#1_1#2_1 + \dotsc + #1_n#2_n}
+\newcommand{\traco}{{\text{Tr}}}
+
+\newcommand{\solucao}{\vspace{0.2cm}\noindent\textbf{Solução:}\ }
+\newcommand{\definicao}{\vspace{0.2cm}\noindent\textbf{Definição:}\ }
+\newcommand{\exemplo}{\vspace{0.2cm}\noindent\textbf{Exemplo:}\ }
+
+\pagestyle{fancy}
+\fancyhead[LO,L]{\textit \normalsize \nouppercase \leftmark}
+\fancyhead[RO,R]{\textit \normalsize \nouppercase \rightmark}
+\fancyfoot[LO,L]{\itshape{Osvaldo Pereira}}
+\fancyfoot[RO,R]{Equação de Onda}
+
+\begin{document}
+\tableofcontents
+
+\include{1}
+\include{2}
+\include{3}
+
+\printindex
+\end{document}

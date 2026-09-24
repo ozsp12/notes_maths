@@ -1,0 +1,190 @@
+\section{Polinômios de Legendre}
+
+
+\subsection{Cálculo de (2n)!}
+Seja:
+%
+%
+\[f_n(t) = \frac{1}{2^nn!}\,\frac{d^n}{dt^n}(t^2 - 1)^n\]
+%
+%
+Expandindo a função $u(t) = t^2 - 1$ em termos do teorema binomial, temos que:
+%
+%
+\[u^n = (t^2 - 1)^n = \sum_{k=0}^{n}\binom{n}{k}t^{2n - 2k}(-1)^{k}\]
+%
+%
+Derivando uma vez encontramos que:
+%
+%
+\[(u^n)' = \sum_{k=0}^{n-1}\binom{n}{k}(2n - 2k)t^{2n - 2k - 1}(-1)^{k} \]
+%
+%
+Derivando pela segunda vez:
+%
+%
+\[(u^n)'' = \sum_{k=0}^{n-2}\binom{n}{k}(2n - 2k)(2n - 2k - 1)t^{2n - 2k - 2}(-1)^{k} \]
+%
+%
+Derivando m vezes, temos que:
+%
+%
+\[(u^n)^{(m)} = \sum_{k=0}^{n}\binom{n}{k}(2n - 2k)(2n - 2k - 1)...(2n-2k- m + 1)t^{2n - 2k - m}(-1)^{k} \]
+%
+%
+Derivando n vezes:
+%
+%
+\[(u^n)^{(n)} = \sum_{k=0}^{N}\binom{n}{k}(2n - 2k)(2n - 2k - 1)...(n - 2k)t^{n - 2k}(-1)^{k} \]
+%
+%
+Sendo $N = n/2$ se $n$ for par, e $N = (n - 1)/2$ se $n$ for ímpar. Derivando $2n$ vezes, a somatória tem apenas um termo, sendo o único valor possível: $k = 0$
+%
+%
+\[(u^n)^{(2n)} = \sum_{k = 0}^{0}\binom{n}{k}(2n - 2k)(2n - 2k - 1)...(1 - 2k)t^{- 2k}(-1)^{k} \]
+%
+%
+Ou seja:
+%
+%
+\[(u^n)^{(2n)} = \binom{n}{k}(2n - 0)(2n - 0 - 1)\ldots(1 - 0)t^{0}(-1)^{0} = (2n)(2n - 1)\ldots1 = (2n)! \]
+
+
+
+\newpage
+\subsection{Normalização}
+
+Seja:
+%
+%
+\[f_n(t) = \frac{1}{2^nn!}\,\frac{d^n}{dt^n}(t^2 - 1)^n\]
+%
+%
+Fazendo $u = t^2 - 1$, temos que:
+%
+%
+\[p_n(t) = 2^nn!f_n(t) = \frac{d^n}{dt^n}u^n = (u^n)^{(n)}\]
+%
+%
+Calculando:
+%
+%
+\[ ||p_n||^2 = \int_{-1}^{1} p_n^2(t)\, dt = \int_{-1}^{1} (u^n)^{(n)}(u^n)^{(n)}\, dt \]
+%
+%
+Notemos que $u(t)$ se anula no intervalo $[-1,1]$, assim como todas suas n-ésimas derivadas. De forma que, integrando uma vez por partes, encontramos que:
+%
+%
+\[I_{n,0} = \int_{-1}^{1} (u^n)^{(n)}(u^n)^{(n)}\, dt = (u^n)^{(n-1)}(u^n)^{(n)}\big|_{-1}^{1} - \int_{-1}^{1} (u^n)^{(n-1)}(u^n)^{(n+1)}\,dt\]
+%
+%
+\[I_{n,1} = - \int_{-1}^{1} (u^n)^{(n-1)}(u^n)^{(n+1)}\,dt\]
+%
+%
+Integrando novamente por partes, encontramos que:
+%
+%
+\[I_{n,1} = - \int_{-1}^{1} (u^n)^{(n-1)}(u^n)^{(n+1)}\, dt = - (u^n)^{(n-2)}(u^n)^{(n+1)}\big|_{-1}^{1} + \int_{-1}^{1} (u^n)^{(n-2)}(u^n)^{(n+2)}\, dt\]
+%
+%
+Integrando novamente:
+%
+%
+\[I_{n,2} = \int_{-1}^{1} (u^n)^{(n-2)}(u^n)^{(n+2)}\, dt\]
+%
+%
+Integrando m vezes por partes, encontramos que:
+%
+%
+\[I_{n,m} = (-1)^m\int_{-1}^{1} (u^n)^{(n-m)}(u^n)^{(n+m)}\, dt\]
+%
+%
+Integrando n vezes:
+%
+%
+\[I_{n,n} = (-1)^n\int_{-1}^{1} (u^n)(u^n)^{(2n)}\, dt = (2n)!(-1)^n\int_{-1}^{1} (u^n)\, dt\]
+%
+%
+Voltando a notação antiga:
+%
+%
+\[I_{n,n} = (-1)^n\int_{-1}^{1} (u^n)(u^n)^{(2n)}\, dt = (2n)!\int_{-1}^{1} (1 - t^2)^n\, dt\]
+%
+%
+Agora o problema se resume em calcular a seguinte integral:
+%
+%
+\[I_n = \int_{-1}^{1} (1 - t^2)^n\, dt\]
+
+
+
+
+\subsection{Cálculo da Integral}
+
+Calculando a integral por partes n vezes, e depois simplificando a relação, encontra-se uma relação de recorrência entre as integrais $In$ e $I_{n-1}$:
+
+\begin{eqnarray}
+\nonumber I_n &=& \int_{-1}^{1} (1 - t^2)^n\, dt \\
+\nonumber     &=& \int_{-1}^{1} (1 - t^2)^{n-1} (1 - t^2)\, dt\\
+\nonumber     &=& I_{n-1} - \int_{-1}^{1} (1 - t^2)^{n-1}t^2\, dt\\
+\nonumber     &=& I_{n-1} + \frac{1}{2}\int_{-1}^{1} t(1 - t^2)^{n-1}\, d(1 - t^2)\\
+\nonumber     &=& I_{n-1} + \frac{1}{2n}\int_{-1}^{1} t\, d[(1 - t^2)^n]\\
+\nonumber     &=& I_{n-1} + \frac{1}{2n}\left(t(1 - t^2)^n\big|_{-1}^{1} - \int_{-1}^{1}(1 - t^2)^n\,dt\right)\\
+\nonumber     &=& I_{n-1} - \frac{I_n}{2n}\\
+\nonumber     &=& \frac{2n}{2n + 1}I_{n-1}
+\end{eqnarray}
+%
+%
+Abrindo a relação de recorrência, encontra-se a seguinte relação:
+%
+%
+\[I_n = \frac{2n}{2n + 1}\frac{2n - 2}{2n - 1}\frac{2n - 4}{2n - 3}\ldots \frac{2n - 2k}{2n - 2k + 1}I_{n-k}\]
+%
+%
+Fazendo k = n, notando que $(2n)\ldots 2 = 2^n n!$ e que completando o denominador com $2^n n!$ encontramos $(2n)!$, temos então que:
+%
+%
+\begin{eqnarray}
+\nonumber I_n &=& \frac{2n}{2n + 1}\frac{2n - 2}{2n - 1}\frac{2n - 4}{2n - 3}\ldots \frac{2}{3}I_{0}\\
+\nonumber     &=& \frac{2^nn!}{2n + 1}\frac{1}{2n - 1}\ldots\frac{2}{3} I_{0}\\
+\nonumber     &=& \frac{2^nn!}{2n + 1}\frac{2n}{(2n)(2n - 1)}\ldots\frac{2}{2.3} I_{0}\\
+\nonumber     &=& \frac{2^nn!}{2n + 1}\frac{2^{n+1}n!}{(2n)!} I_{0}\\
+\nonumber     &=& \frac{2^{2n+1}}{2n + 1}\frac{(n!)^2}{(2n)!} I_{0}
+\end{eqnarray}
+%
+%
+De forma que (lembrando que $I_0 = 1$):
+%
+%
+\[I_{n,n} = (2n)!\int_{-1}^{1} (1 - t^2)^n\, dt = \frac{2^{2n+1}}{2n + 1}(n!)^2\]
+
+
+\subsection{Motivação: normalização}
+
+A partir da relação encontrada no cálculo da norma de $f_n$:
+%
+%
+\[ ||f_n||^2 = \frac{1}{2^{2n}(n!)^2}\int_{-1}^{1} f_n^2(t)\, dt = \frac{1}{2^{2n}(n!)^2}\int_{-1}^{1} (u^n)^{(n)}(u^n)^{(n)}\, dt \]
+%
+%
+De forma que:
+%
+%
+\begin{eqnarray}
+\nonumber ||f_n||^2 &=& \frac{1}{2^{2n}(n!)^2} \int_{-1}^{1} f_n^2(t)\, dt \\
+\nonumber           &=& \frac{1}{2^{2n}(n!)^2}\int_{-1}^{1} (u^n)^{(n)}(u^n)^{(n)}\, dt\\
+\nonumber           &=& \frac{1}{2^{2n}(n!)^2}\frac{2^{2n+1}}{2n + 1}(n!)^2\\
+\nonumber           &=& \frac{2}{2n + 1}
+\end{eqnarray}
+%
+%
+Finalmente encontramos a seguinte relação:
+%
+%
+\[||f_n|| = \sqrt{\frac{2}{2n + 1}}\]
+%
+%
+E assim fica justificada a motivação para a escolha das seguintes funções (funções normalizadas):
+%
+%
+\[e_n = \sqrt{\frac{2n + 1}{2}}f_n \to ||e_n|| = 1\]

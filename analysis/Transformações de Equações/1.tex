@@ -1,0 +1,118 @@
+\section{Equação de Onda - Caso Unidimensional}
+
+\subsection{Objetivos}
+
+Seja a equação de onda para o caso unidimensional:
+%
+%
+\[\deli{^2\psi}{(ct)^2} = \deli{^2\psi}{x^2}\]
+%
+%
+Nesta primeira etapa demonstraremos que a equação de onda possui como solução geral, uma
+função do tipo, $\psi(x,ct) = \varphi(x - ct) + \xi(x + ct)$, e mostrar que a equação de
+onda, quando transformada pelas seguintes transformações de coordenadas, $\alpha = x -
+ct$, e $\beta = x + ct$, possui a seguinte forma:
+%
+%
+\[\deli{^2\psi}{\alpha\partial\beta} = 0\]
+
+
+
+
+\subsection{Usando Derivadas Parciais}
+
+Temos então duas novas funções, $\alpha(x,ct) = x - ct$ e $\beta(x,ct) = x + ct$, para
+transformarmos a equação de onda, devemos primeiramente calcular as derivadas parciais
+das coordenadas antigas em função das novas coordenadas. Primeiramente realizando os
+cálculos para a coordenada $ct = ct(\alpha,\beta)$, temos que:
+%
+%
+\begin{eqnarray}
+\nonumber \deli{}{ct} &=& \deli{\alpha}{ct}\deli{}{\alpha} +
+\deli{\beta}{ct}\deli{}{\beta}\\
+\nonumber             &=& \deli{}{\beta} - \deli{}{\alpha}
+\end{eqnarray}
+%
+%
+Aplicando novamente a derivada em relação à coordenada, $ct$, e lembrando que
+asencontramos novas coordenadas $\alpha$ e $\beta$ são independentes entre si, e
+lembrando também que as derivadas mistas de segunda ordem permutam entre si, ou seja,
+$\partial_{\alpha\beta} = \partial_{\beta\alpha}$, temos que:
+%
+%
+\begin{eqnarray}
+\nonumber \deli{^2}{(ct)^2} &=& \left(\deli{}{\beta} - \deli{}{\alpha}\right)
+\left(\deli{}{\beta} - \deli{}{\alpha}\right)\\
+\nonumber             &=& \deli{^2}{\beta^2} - 2\deli{^2}{\alpha\beta} +
+\deli{^2}{\alpha^2}
+\end{eqnarray}
+%
+%
+Procedendo da mesma maneira, dessa vez para a nova coordenada $\beta$, temos que:
+%
+%
+\begin{eqnarray}
+\nonumber \deli{}{x} &=& \deli{\alpha}{x}\deli{}{\alpha} +
+\deli{\beta}{x}\deli{}{\beta}\\
+\nonumber             &=& \deli{}{\beta} + \deli{}{\alpha}
+\end{eqnarray}
+%
+%
+Aplicando novamente a derivada, e tendo em mente que, $\partial_{\alpha\beta} =
+\partial_{\beta\alpha}$, encontramos:
+%
+%
+\begin{eqnarray}
+\nonumber \deli{^2}{x^2} &=& \left(\deli{}{\beta} + \deli{}{\alpha}\right)
+\left(\deli{}{\beta} + \deli{}{\alpha}\right)\\
+\nonumber             &=& \deli{^2}{\beta^2} + 2\deli{^2}{\alpha\beta} +
+\deli{^2}{\alpha^2}
+\end{eqnarray}
+%
+%
+Substituindo as relações encontradas para as derivadas parciais segundas das antigas
+coordenadas, $x$ e $ct$, em função das novas coordenadas $\alpha$ e $\beta$, na equação
+de onda, encontramos o seguinte resultado:
+%
+%
+\begin{eqnarray}
+\nonumber \deli{^2\psi}{(ct)^2} &=& \deli{^2\psi}{x^2}\\
+\nonumber  \left(\deli{^2}{\beta^2} - 2\deli{^2}{\alpha\beta} +
+\deli{^2}{\alpha^2}\right)\psi &=& \left(\deli{^2}{\beta^2} + 2\deli{^2}{\alpha\beta} +
+\deli{^2}{\alpha^2}\right)\psi\\
+\nonumber \deli{^2\psi}{\alpha\partial\beta} &=& 0
+\end{eqnarray}
+%
+%
+A equação $\partial_{\alpha\beta}\psi = 0$, nos indica que $\partial_\beta\psi$ é uma
+função apenas da nova coordenada $\beta$, ou seja, temos que $\partial_\beta\psi =
+f(\beta)$, de forma que:
+%
+%
+\[\deli{^2\psi}{\alpha\beta} = 0 \ \to \ \deli{\psi}{\beta} = \text{constante}\]
+%
+%
+Esta seria a primeira integral. A segunda integral seria dada pela relação acima,
+$\partial_\beta\psi = \text{constante}$, integrando novamente, e tendo em mente que essa
+função constante é na verdade constante em relação à derivada em função de $\beta$, ou
+seja, que é uma função da coordenada $\alpha$, temos que:
+%
+%
+\begin{eqnarray}
+\nonumber \partial_\beta\psi &=& f(\beta)\\
+\nonumber \psi &=& \int f(\beta)\, d\beta + \varphi(\alpha)
+\end{eqnarray}
+%
+%
+Chamando a integral $\int f(\beta)\, d\beta$ de uma função apenas de $\beta$, ou seja,
+$\int f(\beta)\, d\beta = \xi(\beta)$, cumprimos finalmente todos os objetivos propostos
+inicialmente, provamos que ao escolher novas coordenadas $\alpha = x -
+ct$, e $\beta = x + ct$, a equação de onda teria a forma, $\partial_{\alpha\beta}\psi =
+0$, e que sua solução geral seria da forma $\psi = \varphi(\alpha) + \xi(\beta)$.
+Voltando às antigas coordenadas, temos que a solução geral é dada pela função de onda
+retardada e progressiva.
+%
+%
+\[\psi(x,ct) = \varphi(x - ct) + \xi(x + ct)\]
+
+

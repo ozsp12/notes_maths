@@ -1,0 +1,76 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[portuges]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amsfonts,mathrsfs,amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{makeidx}
+\numberwithin{equation}{section}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=1cm,lmargin=2cm,rmargin=2cm}
+\usepackage[pdftex,plainpages=false,pdfpagelabels,pagebackref,colorlinks=true,
+citecolor=black,linkcolor=black,urlcolor=black,filecolor=black,bookmarksopen=true]{
+hyperref}
+\usepackage{sectsty}
+\sectionfont{\large}
+\subsectionfont{\normalsize}
+
+
+\setlength{\textheight}{240mm}
+\setlength{\headheight}{28pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\renewcommand{\baselinestretch}{1.2}
+
+
+%Atalhos para notação de conjuntos
+\newcommand{\cqd}{{{\hfill $\rule{2.5mm}{2.5mm}$}}\vspace{1cm}\\}
+\newcommand{\sen}{\mathrm{sen}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\I}{\mathbb{I}}
+
+
+%Comandos Atalhos para operações matemáticas
+\newcommand{\deli}[2]{\ensuremath\frac{\partial#1}{\partial#2}}
+\newcommand{\deri}[2]{\ensuremath\frac{d#1}{d#2}}
+\newcommand{\nt}[4]{\ensuremath{ \int_{#1}^{#2} #3 \, \mbox{d}#4}}
+
+%Atalhos para notações matemáticas, funções, conjuntos, etc.
+\newcommand{\raiotres}{\sqrt{x^2 + y^2 + z^2}}
+\newcommand{\coordn}[1]{(#1_1,\dotsc,#1_n)}
+\newcommand{\normapi}[2]{\langle #1,#2 \rangle}
+\newcommand{\norma}[1]{||#1||}
+\newcommand{\prodint}[2]{\langle #1,#2 \rangle}
+\newcommand{\setn}[1]{(#1_1,\dotsc,#1_n)}
+\newcommand{\traco}{{\text{Tr}}}
+\newcommand{\posto}{{\text{posto}}}
+\newcommand{\Ima}{{\text{Im}}}
+
+%Atalhos para ambientes matemáticos
+\newcommand{\exercicio}[1]{\vspace{0.2cm}\noindent\textbf{Exercício #1. }\ }
+\newcommand{\lema}[1]{\vspace{0.2cm}\noindent\textbf{Lema #1. }\ }
+\newcommand{\propriedade}[1]{\vspace{0.2cm}\noindent\textbf{Propriedade #1:}\ }
+\newcommand{\definicao}{\vspace{0.2cm}\noindent\textbf{Definição:}\ }
+\newcommand{\solucao}{\vspace{0.2cm}\noindent\textbf{Solução:}\ }
+\newcommand{\exemplo}[1]{\vspace{0.2cm}\noindent\textbf{Exemplo #1 :}\ }
+\newcommand{\demonstracao}{\vspace{0.2cm}\noindent\textbf{Demonstração:}\ }
+\newcommand{\prova}{\vspace{0.2cm}\noindent\textbf{Prova:}\ }
+
+\pagestyle{fancy}
+\fancyhead[LO,L]{\textit \normalsize \nouppercase \leftmark}
+\fancyhead[RO,R]{\textit \normalsize \nouppercase \rightmark}
+\fancyfoot[LO,L]{\itshape{Osvaldo Pereira}}
+\fancyfoot[RO,R]{Polinômios de Legendre}
+\begin{document}
+\tableofcontents
+\include{1}
+
+
+
+\end{document}

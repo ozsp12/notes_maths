@@ -1,0 +1,104 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[portuges]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath,amsfonts,mathrsfs,amssymb}
+\usepackage{multicol}
+\usepackage[latin1]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{makeidx}
+\makeindex
+\numberwithin{equation}{section}
+
+
+
+%Estrutura e formatação do texto
+\setlength{\textwidth}{152mm}
+\setlength{\textheight}{210mm}
+\setlength{\headheight}{16pt}
+\renewcommand{\baselinestretch}{1.2}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+
+
+
+%Atalhos para notação de conjuntos
+\newcommand{\cqd}{{{\hfill $\rule{2.5mm}{2.5mm}$}}\vspace{1cm}\\}
+\newcommand{\sen}{\mathrm{sen}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\I}{\mathbb{I}}
+
+
+
+
+
+%Comandos Atalhos para operações matemáticas
+\newcommand{\deli}[2]{\ensuremath\frac{\partial#1}{\partial#2}}
+\newcommand{\deri}[2]{\ensuremath\frac{d#1}{d#2}}
+\newcommand{\nt}[4]{\ensuremath{ \int_{#1}^{#2} #3 \, \mbox{d}#4}}
+
+
+
+
+%Atalhos para notações matemáticas, funções, conjuntos, etc.
+\newcommand{\raiotres}{\sqrt{x^2 + y^2 + z^2}}
+\newcommand{\coordn}[1]{(#1_1,\dotsc,#1_n)}
+\newcommand{\setn}[1]{(#1_1,\dotsc,#1_n)}
+\newcommand{\prodintn}[2]{#1_1#2_1 + \dotsc + #1_n#2_n}
+\newcommand{\traco}{{\text{Tr}}}
+
+
+
+
+%Atalhos para notações vetoriais
+\newcommand{\diff}{\text{d}}
+\newcommand{\te}{\text{t}}
+\newcommand{\di}{\mbox{d}}
+\newcommand{\x}{{\bf x}}
+\newcommand{\versor}[1]{{\bf #1}}
+\newcommand{\y}{{\bf y}}
+\newcommand{\e}{{\bf e}}
+\newcommand{\ve}{{\bf v}}
+\newcommand{\diverg}{\text{div}}
+\newcommand{\rotac}{\text{rot}}
+
+
+%Atalhos para ambientes matemáticos
+\newcommand{\exercicio}[1]{\vspace{0.2cm}\noindent\textbf{Exercício #1. }\ }
+\newcommand{\propriedade}[1]{\vspace{0.2cm}\noindent\textbf{Propriedade #1:}\ }
+\newcommand{\definicao}{\vspace{0.2cm}\noindent\textbf{Definição:}\ }
+\newcommand{\solucao}{\vspace{0.2cm}\noindent\textbf{Solução:}\ }
+\newcommand{\exemplo}[1]{\vspace{0.2cm}\noindent\textbf{Exemplo #1 :}\ }
+\newcommand{\demonstracao}{\vspace{0.2cm}\noindent\textbf{Demonstração:}\ }
+\newcommand{\teorema}[1]{\vspace{0.2cm}\noindent\textbf{Teorema #1:}\ }
+
+
+
+\pagestyle{fancy}
+\fancyhead[LO,L]{\textit \normalsize \nouppercase \leftmark}
+\fancyhead[RO,R]{\textit \normalsize \nouppercase \rightmark}
+\fancyfoot[LO,L]{\itshape{Osvaldo Pereira}}
+\fancyfoot[RO,R]{EDP's Aplicadas}
+
+
+
+\begin{document}
+\tableofcontents
+
+\include{1}
+
+
+
+
+
+
+
+
+  
+\printindex
+\end{document}

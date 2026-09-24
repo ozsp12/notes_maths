@@ -1,0 +1,83 @@
+\section{Fatorando a Equação de Onda}
+
+Seja dada a equação de onda:
+%
+%
+\[\deli{^2\psi}{(ct)^2} = \deli{^2\psi}{x^2}\]
+%
+%
+Podemos fatorar a equação acima da seguinte maneira:
+%
+%
+\[\left(\deli{}{x} + \deli{}{ct}\right)\left(\deli{}{x} - \deli{}{ct}\right)\psi = 0\]
+%
+%
+Definindo os seguintes operadores:
+%
+%
+\[\deli{}{\alpha} = \frac{1}{2}\left(\deli{}{x} - \deli{}{ct}\right) \qquad , \qquad
+\deli{}{\beta} = \frac{1}{2}\left(\deli{}{x} + \deli{}{ct}\right)\]
+%
+%
+A equação de onda toma então a seguinte forma:
+%
+%
+\[\deli{^2\psi}{\alpha\partial\beta} = 0\]
+%
+%
+Lembrando das regras de derivação parcial, temos que:
+%
+%
+\begin{eqnarray}
+\nonumber \deli{}{\alpha} &=& \deli{x}{\alpha}\deli{}{x} + \deli{ct}{\alpha}\deli{}{ct}
+= \frac{1}{2}\left(\deli{}{x} - \deli{}{ct}\right)\\
+\nonumber \deli{}{\beta} &=& \deli{x}{\beta}\deli{}{x} + \deli{ct}{\beta}\deli{}{ct} =
+\frac{1}{2}\left(\deli{}{x} + \deli{}{ct}\right)
+\end{eqnarray}
+%
+%
+A partir das relações anteriores, temos que:
+%
+%
+\[
+\deli{x}{\alpha} = \frac{1}{2}
+\qquad
+\deli{ct}{\alpha} = - \frac{1}{2}
+\qquad
+\deli{x}{\beta} = \frac{1}{2}
+\qquad
+\deli{ct}{\beta} = \frac{1}{2}
+\]
+%
+%
+Notando que temos a seguinte relação entre as derivadas parciais, o jacobiano:
+%
+%
+\[
+\deli{(x,ct)}{\alpha,\beta} =
+\begin{vmatrix}
+\deli{x}{\alpha} & \deli{x}{\beta} \\
+\deli{ct}{\alpha} & \deli{ct}{\beta}
+\end{vmatrix} =
+\begin{vmatrix}
+  \frac{1}{2} & \frac{1}{2} \\
+- \frac{1}{2} & \frac{1}{2}
+\end{vmatrix} = \frac{1}{2}
+\]
+%
+%
+Este conjunto de relações entre as derivadas parciais apresenta como solução:
+%
+%
+\[
+x(\alpha,\beta) = \frac{1}{2}(\alpha + \beta)
+\qquad , \qquad
+ct(\alpha,\beta) = \frac{1}{2}(\beta - \alpha)
+\]
+%
+%
+Como o jacobiano das transformações de coordenadas é diferente de zero, isso significa
+que podemos inverter as coordenadas, de forma que:
+%
+%
+\[\alpha(x,ct) = x -ct \qquad , \qquad \beta(x,ct) = x + ct\]

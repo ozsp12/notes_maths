@@ -1,0 +1,62 @@
+\section{Equação 1}
+
+Seja a seguinte equação diferencial ordinária de segunda ordem, sendo $u = u(x)$, e seja
+$u'$ e $u''$ as primeira e segunda derivadas da função $u(x)$ em relação à x:
+%
+%
+\[u'' - xu' +\lambda u = 0\]
+%
+%
+Nesta seção demonstraremos que a função, $v(x) = xu - u'$, satisfaz a seguinte equação
+diferencial:
+%
+%
+\[v'' - xv' + (1 + \lambda) v = 0\]
+%
+%
+Temos que:
+%
+%
+\begin{eqnarray}
+\nonumber  v'  &=& (xu-u')' = u + xu' - u''\\
+\nonumber  v'' &=& (xu-u')'' = (u + xu' - u'')' = 2u' + xu'' - u'''
+\end{eqnarray}
+%
+%
+Inserindo as relações acima, na equação diferencial, temos que:
+%
+%
+\[v'' - xv' + (1 + \lambda) v  = (xu-u')' = 2u' + xu'' - u''' - x(u + xu' -
+u'') + (1 + \lambda)(xu - u')\]
+%
+%
+Simplificando as relações acima, encontramos que:
+%
+%
+\[v'' - xv' + (1 + \lambda)v = u' + xu'' - u''' - x^2u' + xu'' + \lambda xu - \lambda u'\]
+%
+%
+Reorganizando de maneira apropriada, encontramos que:
+%
+%
+\[v'' - xv' + (1 + \lambda) v = u' + xu'' - u''' + x(u'' - xu' + \lambda u) - \lambda u'\]
+%
+%
+Lembrando que, $u'' - xu' + \lambda u = 0$, e inserindo na relação acima, temos que:
+%
+%
+\[v'' - xv' + (1 + \lambda) v = u' + xu'' - (u''' + \lambda u')\]
+%
+%
+Notando que, $u' + xu'' = (xu')'$, e que $u''' + \lambda u' = (u'' + \lambda u)'$,
+encontramos que:
+%
+%
+\[v'' - xv' + (1 + \lambda) v = (xu')' - (u'' + \lambda u)'\]
+%
+%
+Aplicando a linearidade da derivada, temos finalmente que:
+%
+%
+\[v'' - xv' + (1 + \lambda) v = - (- xu' + u'' + \lambda u)' = 0\]
+

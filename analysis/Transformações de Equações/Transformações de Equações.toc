@@ -1,0 +1,6 @@
+\select@language {portuges}
+\contentsline {section}{\numberline {1}Equa\c c\~ao de Onda - Caso Unidimensional}{2}
+\contentsline {subsection}{\numberline {1.1}Objetivos}{2}
+\contentsline {subsection}{\numberline {1.2}Usando Derivadas Parciais}{2}
+\contentsline {section}{\numberline {2}Fatorando a Equa\c c\~ao de Onda}{4}
+\contentsline {section}{\numberline {3}Equa\c c\~ao 1}{5}

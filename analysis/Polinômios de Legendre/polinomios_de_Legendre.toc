@@ -1,0 +1,6 @@
+\select@language {portuges}
+\contentsline {section}{\numberline {1}Polin\^omios de Legendre}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}C\'alculo de (2n)!}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Normaliza\c c\~ao}{3}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}C\'alculo da Integral}{4}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Motiva\c c\~ao: normaliza\c c\~ao}{5}{subsection.1.4}
