@@ -1,0 +1,83 @@
+\subsection{Prolongação}
+
+Mostramos na seção anterior que:
+%
+%
+\[\xi_1 = 0 \qquad , \qquad \xi_2 =  2z_1 \qquad , \qquad \xi_3 = - z_2z_3 \]
+%
+%
+%
+\[\xi_4 = - (2z_5 + z_2z_4) \qquad , \qquad \xi_5 = - (z_3 + z_2z_5) \qquad , \qquad \xi_6 = - (2z_5 + z_2z_6)\]
+%
+%
+%
+Ou na notação do Bluman:
+%
+%
+\[\xi_1 = 2t \qquad , \qquad \xi_2 = 0 \qquad , \qquad \eta = - xu \]
+%
+%
+\[\eta^{(1)} = - (2u_x + x u_t) \qquad , \qquad \eta^{(2)} = - (u + x u_x) \qquad , \qquad \eta^{(3)} = - (2 u_x + x u_{xx})\]
+%
+%
+Temos que $\Phi = \Phi(t,x,u,u_t,u_x,u_{xx}) = u_t - u_{xx} = 0$ é a equação do hiperplano no jetspace $(t,x,u,u_t,u_x,u_{xx})$ de seis dimensões. Demonstrado na seção anterior. Nesta seção utilizaremos as fórmulas de recorrência que preservam as relações de contato. Temos as formas infinitesimais:
+%
+%
+\begin{eqnarray}
+\nonumber t^{*} &=& t + \e\xi_2 + O(\e^2)\\
+\nonumber x^{*} &=& x + \e\xi_2 + O(\e^2) \\
+\nonumber u^{*} &=& u + \e\eta + O(\e^2) \\
+\nonumber u_{x}^{*} &=& u_{x} + \e\eta^{(1)} + O(\e^2) \\
+\nonumber u_t^{*} &=& u_t + \e\eta^{(2)} + O(\e^2) \\
+\nonumber u_{xx}^{*} &=& u_{xx} + \e\eta^{(3)} + O(\e^2)
+\end{eqnarray}
+%
+%
+As formas infnitesimais são encontradas pela condição de invariância $X^{(2)}\Phi = 0$, ou seja, temos a seguinte relação:
+%
+%
+\[X^{(2)}\Phi = \xi_1\deli{\Phi}{t} + \xi_2\deli{\Phi}{x} + \eta\deli{\Phi}{u} + \eta^{(1)}\deli{\Phi}{u_t} + \eta^{(2)}\deli{\Phi}{u_x} + \eta^{(3)}\deli{\Phi}{u_{xx}}\]
+%
+%
+Como temos que $\Phi = u_t - u_{xx} = 0$, de forma que somente as parcelas com derivadas parciais em relação a $u_t$ e em relação a $u_{xx}$ terão importância. Dessa forma a relação acima simplifica para seguinte equação algébrica:
+%
+%
+\[X^{(2)}\Phi = \eta^{(1)} - \eta^{(3)} = 0\]
+%
+%
+Já encontramos a fórmula do Gerador:
+%
+%
+\[X^{(2)} = \xi_1\deli{}{t} + \xi_2\deli{}{x} + \eta\deli{}{u} = 2t\deli{}{t} - xu\deli{}{u}\]
+%
+%
+Temos então as fórmulas da extensão do Gerador, utilizando a seguinte fórmula de recorrência $\eta^{(k)} = D_i\eta^{(k-1)} - u_iD_i\xi_i$. Para que as fórmulas fiquem claras, e os índices não pareçam artificiais ou sem sentido, assumiremos a seguinte notação, $\eta^{(1)} = \eta^{(t)}$, $\eta^{(2)} = \eta^{(x)}$, $\eta^{(3)} = \eta^{(xx)}$
+%
+%
+\begin{eqnarray}
+\nonumber \eta^{(t)}  &=& D_t\eta - u_x D_t\xi_2 - u_tD_t\xi_1\\
+\nonumber \eta^{(x)}  &=& D_x\eta - u_x D_x\xi_2 - u_tD_x\xi_1 \\
+\nonumber \eta^{(xx)} &=& D_x\eta^{(x)} - u_{xx} D_x\xi_2 
+\end{eqnarray}
+%
+%
+Lembrando que $\xi_1 = 2t$, $\xi_2 = 0$ e $\eta = - xu$, de forma que $D_t\eta = D_t(-ux) = - x u_t$, da mesma maneira temos que $D_x\eta = D_x(-xu) = -xu_x - u$, $D_t\xi_1 = 2$, $D_x\xi_1 = 0$, $D_t\xi_2 = D_x\xi_2 = 0$. Encontramos as seguintes relações para as extensões:
+%
+%
+\begin{eqnarray}
+\nonumber \eta^{(t)}  &=& D_t\eta - u_x D_t\xi_2 - u_tD_t\xi_1 = - (2u_x + x u_t) \\
+\nonumber \eta^{(x)}  &=& D_x\eta - u_x D_x\xi_2 - u_tD_x\xi_1 = - (u + x u_x)\\
+\nonumber \eta^{(xx)} &=& D_x\eta^{(x)} - u_{xx} D_x\xi_2 =  D_x(- u - x u_x) = - (2u_x + u_{xx}) 
+\end{eqnarray}
+%
+%
+Com isso chegamos na seguinte relação para o Gerador $X^{(2)}$:
+%
+%
+\begin{eqnarray}
+\nonumber X^{(2)} &=& \xi_1\deli{}{t} + \xi_2\deli{}{x} + \eta\deli{}{u} + \eta^{(1)}\deli{}{u_t} + \eta^{(2)}\deli{}{u_x} + \eta^{(3)}\deli{}{u_{xx}}\\
+\nonumber &=& 2t\deli{}{t} - xu \deli{}{u} - (2u_x + x u_t)\deli{}{u_t} - (u + x u_x)\deli{}{u_x} - (2u_x + u_{xx})\deli{}{u_{xx}}
+\end{eqnarray}
+%
+%
+Que é o mesmo resultado obtido na seção anterior encontrando as relações $u_{t^*}^{*}$, $u_{x^*}^{*}$, e $u_{x^*x^*}^{*}$.

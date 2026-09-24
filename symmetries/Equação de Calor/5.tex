@@ -1,0 +1,47 @@
+\subsection{Jet-Space, notação z}
+
+As equações $t^* = t$, $x^* = x + 2\e t$ e $u^* = u \exp(- \e x - \e^2 t)$ formam um grupo de transformações de Lie de um parâmetro, no Jet-Space de seis dimensões das variáveis:
+%
+%
+\[z = (z_1,z_2,z_3,z_4,z_5,z_6) = (t,x,u,u_t,u_x,u_{xx})\]
+%
+%
+A equação de onda, $u_t - u_{xx} = 0$ neste espaço de seis dimensões tem como equação do hiperplano, $z_4 - z_6 = 0$. Para calcular o Gerador $X^{(2)}$ desse grupo deve-se utilizar as equações deduzidas de forma que:
+%
+%
+\begin{eqnarray}
+\nonumber t^*   &=& t\\
+\nonumber x^{*} &=&  x + 2\e t \\
+\nonumber u^{*} &=& u \exp(- \e x - \e^2 t) = uf \\
+\nonumber u_{t^*}^{*}    &=& (-2\e u_x + u_t + \e^2u)f \\
+\nonumber u_{x^*}^{*}    &=& (u_x - \e u)f \\
+\nonumber u_{x^*x^*}^{*} &=& (u_{xx} - 2\e u_{x} + \e^2 u)f
+\end{eqnarray}
+%
+%
+%
+Lembrando que:
+%
+%
+\[\xi_i = \deri{z_i^*}{\e}\Big|_{\e = 0} \to X^{(2)} = \sum_{i = 1}^{6}\xi_i \deli{}{z_i}\]
+%
+%
+De forma que:
+%
+%
+\[\xi_1 = 0 \qquad , \qquad \xi_2 =  2z_1 \qquad , \qquad \xi_3 = - z_2z_3 \]
+%
+%
+%
+\[\xi_4 = - (2z_5 + z_2z_4) \qquad , \qquad \xi_5 = - (z_3 + z_2z_5) \qquad , \qquad \xi_6 = - (2z_5 + z_2z_6)\]
+%
+%
+%
+Aplicando o Gerador à equação do hiperplano, encontramos que $X^{(2)}(z_4 - z_6) = \pm z_2(z_4 - z_6)$. De fato, pois as únicas parcelas do gerador que irão operar sem anular a função $F(z) = z_4 - z_6$ serão justamente as parcelas de $z_4$ e $z_6$, de forma que:
+%
+%
+\begin{eqnarray}
+\nonumber X^{(2)}F(z) &=& X^{(2)}(z_4 - z_6) = \sum_{i = 1}^{6}\xi_i \deli{(z_4 - z_6)}{z_i} \\
+\nonumber &=& \sum_{i = 1}^{6}\xi_i (\delta_{4i} - \delta_{6i}) = \xi_4 - \xi_6 \\
+\nonumber &=& - (2z_5 + z2z_4) + (2z_5 + z_2z_6) = - z_2(z_4 - z_6)
+\end{eqnarray}

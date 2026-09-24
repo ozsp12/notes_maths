@@ -1,0 +1,9 @@
+\select@language {portuges}
+\contentsline {section}{\numberline {1}Equa\c c\~ao de Calor e Grupos de Transforma\c c\~oes}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Grupos de Transforma\c c\~ao}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Outro Grupo de Transforma\c c\~ao}{3}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Gerador Infinitesimal e Grupos}{3}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}C\'alculo de Derivadas Parciais}{4}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Outro Grupo de Transforma\c c\~oes}{5}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}Jet-Space, nota\c c\~ao z}{6}{subsection.1.6}
+\contentsline {subsection}{\numberline {1.7}Prolonga\c c\~ao}{7}{subsection.1.7}

@@ -1,0 +1,51 @@
+\section{Equação de Calor e Grupos de Transformações}
+
+
+\subsection{Grupos de Transformação}
+
+Para a equação de calor mostraremos que esta equação permanece invariante sobre as seguintes transformações:
+%
+%
+\begin{eqnarray}
+u_{t} - u_{xx} &=& 0 \qquad \mbox{(Equação de Calor)} \label{calor}\\
+t^* &=& t + \e \qquad \mbox{(Translações no tempo)} \label{tempo}\\
+x^* &=& x + \e \qquad \mbox{(Translações em coordenadas espaciais)} \label{espacial}\\
+u^* &=& u + \e \varphi(t,x) \qquad \mbox{(Princípio da Superposição)} \label{superposicao}\\
+u^* &=& ue^{\e} 
+\end{eqnarray}
+%
+%
+Na equação \ref{superposicao} temos que $\varphi(t,x)$ é uma solução qualquer da equação \ref{calor}. Utilizando as relações \ref{tempo} e \ref{espacial}, e a regra da cadeia para funções de várias varáveis, tem-se que:
+%
+%
+\begin{eqnarray}
+\deli{}{t} &=& \deli{t^*}{t}\deli{}{t^*} +  \deli{x^*}{t}\deli{}{x^*} = \deli{}{t^*} \label{grupotempo}\\
+\deli{}{x} &=& \deli{t^*}{x}\deli{}{t^*} +  \deli{x^*}{x}\deli{}{x^*} = \deli{}{x^*}\label{grupoespaco}
+\end{eqnarray}
+%
+%
+De forma que a equação de calor permaneça invariante sobre translações no tempo e nas coordenadas espaciais. Ou seja, tem-se que:
+%
+%
+\[u_{t} - u_{xx} = u_{t^*} - u_{x^*x^*} = 0\]
+%
+%
+Utilizando as relações \ref{grupotempo} e \ref{grupoespaco}, e a transformação $u^* = u + \e \varphi(t,x)$, encontra-se que:
+%
+%
+\begin{eqnarray}
+\nonumber (\partial_{t^*} - \partial_{x^*x^*})(u + \e \varphi(t,x)) &=& (\partial_{t} - \partial_{xx})(u + \e \varphi(t,x))\\
+\nonumber &=& (\partial_{t} - \partial_{xx})u + (\partial_{t} - \partial_{xx})(\e \varphi(t,x))\\
+\nonumber &=& (u_t - u_{xx} + \e(\varphi_t - \varphi_{xx})\\
+\nonumber &=& 0
+\end{eqnarray}
+%
+%
+Da mesma forma, procedemos para a transformação $u^* = u e^\e$:
+%
+%
+\begin{eqnarray}
+\nonumber (\partial_{t^*} - \partial_{x^*x^*})(u e^\e) &=& (\partial_{t} - \partial_{xx})(u e^\e)\\
+\nonumber &=& e^\e(u_t - u_{xx})\\
+\nonumber &=& 0
+\end{eqnarray}

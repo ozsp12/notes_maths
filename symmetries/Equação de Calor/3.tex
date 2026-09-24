@@ -1,0 +1,53 @@
+\subsection{Cálculo de Derivadas Parciais}
+
+Sendo o seguinte grupo de transformações $t^* = t$, $x^* = x + 2\e t$ e $u^* = u \exp(- \e x - \e^2 t)$, e aplicando a regra da cadeia nas transformações, encontra-se que:
+%
+%
+\begin{eqnarray}
+\deli{^2}{{x^*}^2} &=& \deli{^2}{x^2} = - 2 \e \partial_{x} + \partial_{t} \\
+\deli{}{t^*} &=& -2\e \deli{}{x} + \deli{}{t}
+\end{eqnarray}
+%
+%
+Nesta seção serão calculadas as seguintes derivadas parciais $u_{t^*}^{*}$, $u_{x^*}^{*}$ e $u_{x^*x^*}^{*}$, onde tem-se que $u^* = u \exp(-\e x - \e^2 t)$.E encontrar a equação diferencial na qual a equação de calor $u_{t} = u_{xx}$ se transforma. Por simplificade, tem-se que $f(t,x,\e) = \exp(- \e x - \e^2 t)$, de modo que $f_t = -\e^2 f$, $f_x = -\e f$ e $f_{xx} = \e^2 f$. Dessa forma, tem-se que:
+%
+%
+\begin{eqnarray}
+\nonumber u_{t^*}^{*} &=& (- 2 \e \partial_{x} + \partial_{t})(uf)\\
+\nonumber &=& - 2\e(u_x f + u f_x) + (u_t f + u f_t)\\
+\nonumber &=& - 2\e(u_x - \e u)f + (u_t - \e^2 u)f\\
+\nonumber &=& (-2\e u_x + u_t + \e^2u)f
+\end{eqnarray}
+%
+%
+Calculando da mesma maneira, encontra-se $u_{x^*}^{*}$:
+%
+%
+\[u_{x^*}^{*} = \partial_{x}(uf) = (u_x - \e u)f \]
+%
+%
+E finalmente calcula-se $u_{x^*x^*}^{*}$:
+%
+%
+\begin{eqnarray}
+\nonumber u_{x^*x^*}^{*} &=& \partial_{x}(u_x f - \e u f)\\
+\nonumber  &=& (u_{xx}f + u_{x}f_x - \e u_x f - \e u f_x)\\
+\nonumber  &=& (u_{xx}f - \e u_{x}f - \e u_x f + \e^2 u f)\\
+\nonumber  &=& (u_{xx} - 2\e u_{x} + \e^2 u)f
+\end{eqnarray}
+%
+%
+Em resumo:
+%
+%
+\begin{eqnarray}
+\nonumber u_{t^*}^{*}    &=& (-2\e u_x + u_t + \e^2u)f \\
+\nonumber u_{x^*}^{*}    &=& (u_x - \e u)f \\
+\nonumber u_{x^*x^*}^{*} &=& (u_{xx} - 2\e u_{x} + \e^2 u)f
+\end{eqnarray}
+%
+%
+De forma que:
+%
+%
+\[u_{t^*}^{*} - u_{x^*x^*}^{*} = (u_t - u_{xx})f = (u_t - u_{xx})\exp(- \e x - \e^2 t)\]

@@ -1,0 +1,42 @@
+\subsection{Outro Grupo de Transformações}
+
+Seja $\varphi(t,x)$ uma solução qualquer da equação de calor $u_t = u_{xx}$, será demonstrado que a função $u(t,x) = \exp(\e x + \e^2 t)\varphi(t,x + 2\e t)$ é também solução da equação de onda. Para atacar este problema primeiro deve-se atentar ao fato de que $\varphi(t,x + 2\e t) = \varphi(t^*,x^*)$, onde $t^* = t$ e que $x^* = x + 2\e t$. De forma que seja válida a seguinte relação $\varphi_{t^*} = \varphi_{x^*x^*}$, ou seja, como dito anteriormente, tem-se que $\varphi(t^*,x^*)$ é solução da equação de onda. Aplicando a regra da cadeia no grupo de transformações descrito anteriormente, encontra-se que:
+%
+%
+\begin{eqnarray}
+\nonumber \partial_{t} &=& \partial_{t^*} + 2\e \partial_{x^*}\\
+\nonumber \partial_{x} &=& \partial_{x^*}
+\end{eqnarray}
+%
+%
+De forma a simplificar a notação, tem-se que $f = \exp(\e x + \e^2 t)$, de forma que $\partial_t f = f_t = \e^2 f$, $\partial_x f = f_x = \e f$ e que $\partial_{xx} f = f_{xx} = \e^2 f$. Aplicando o operador $\partial = \partial_t - \partial_{xx}$ na função $u = u(x,t) = f \varphi(t^*,x^*)$, deve-se encontrar que $\partial u = 0$, ou seja, que $u(t,x)$ é solução da equação de onda.
+%
+%
+\begin{eqnarray}
+\nonumber \partial_{t}u &=& f_t \varphi + f(\partial_{t^*} + 2\e \partial_{x^*})\varphi\\
+\nonumber u_t &=& f_t \varphi + f(\varphi_{t^*} + 2\e \varphi_{x^*})\\
+\nonumber u_t &=& (\e^2 \varphi + 2\e\varphi_{x^*} + \varphi_{t^*})f
+\end{eqnarray}
+%
+%
+Procedendo de forma análoga, encontra-se que:
+%
+%
+\begin{eqnarray}
+\nonumber u_x &=& f_x \varphi + f \partial_{x^*}\varphi = (\e\varphi + \varphi_{x^*})f\\
+\nonumber u_{xx} &=& \partial_x (\e\varphi + \varphi_{x^*})f\\
+\nonumber u_{xx} &=& (\e^2\varphi + \e\varphi_{x^*})f + (\e\varphi_{x^*} + \varphi_{x^*x^*})f\\
+\nonumber u_{xx} &=& (\e^2\varphi + 2\e\varphi_{x^*} + \varphi_{x^*x^*})f
+\end{eqnarray}
+%
+%
+De forma que:
+%
+%
+\begin{eqnarray}
+\nonumber u_t - u_{xx} &=& (\varphi_{t^*} - \varphi_{x^*x^*})f\\
+\nonumber              &\Leftrightarrow&  \varphi_{t^*} - \varphi_{x^*x^*} = 0
+\end{eqnarray}
+%
+%
+De fato, tem-se que $\varphi = \varphi(t^*,x^*)$ é por hipótese, solução da equação de onda, ou seja, tem-se de fato a seguinte relação: $\varphi_{t^*} - \varphi_{x^*x^*} = 0$.
