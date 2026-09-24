@@ -6,19 +6,19 @@ Depending on the subject, a note may include definitions, propositions, theorems
 
 ## Repository Organization
 
-```mermaid
-flowchart TD
-    A[notes_maths] --> B[elementary_mathematics]
-    A --> C[algebra]
-    A --> D[analysis]
-    A --> E[geometry]
-    A --> F[topology]
-    A --> G[number_theory]
-    A --> H[combinatorics]
-    A --> I[logic_and_foundations]
-    A --> J[numerical_analysis]
-    A --> K[optimization]
-    A --> L[templates]
+```text
+notes_maths/
+├── elementary_mathematics/
+├── algebra/
+├── analysis/
+├── geometry/
+├── topology/
+├── number_theory/
+├── combinatorics/
+├── logic_and_foundations/
+├── numerical_analysis/
+├── optimization/
+└── templates/
 ```
 
 Within each discipline, I organize individual subjects as independent and largely self-contained notes. A note may contain its own LaTeX source, figures, references, computational code, data, or other assets whenever required. Directory and file names are written in English and follow a simple `snake_case` convention whenever practical.
