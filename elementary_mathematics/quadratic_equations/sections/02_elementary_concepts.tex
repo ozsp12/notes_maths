@@ -1,0 +1,89 @@
+\section{Review of Elementary Concepts}
+
+Quadratic equations are elementary only in the sense that they occur early in the curriculum. A complete understanding presupposes a collection of ideas about numbers, algebraic expressions, logical equivalence, factorization, and functions. This section fixes notation and reviews those ideas in the form needed later. The emphasis is not on exhaustive treatment but on the structural facts that make the theory of quadratic equations work.
+
+\subsection{Number systems and elementary logic}
+
+The standard number systems used throughout this note are
+\be
+\N \subset \Z \subset \Q \subset \R \subset \C.
+\ee
+Natural numbers count discrete objects, integers allow subtraction without leaving the set, rational numbers allow quotients of integers with nonzero denominator, real numbers complete the number line, and complex numbers allow square roots of negative real numbers. The passage from one system to the next is not cosmetic: the solvability of an equation depends on the domain in which solutions are sought.
+
+A mathematical equation is a proposition containing one or more variables. Solving an equation over a set $S$ means determining all values in $S$ that make the proposition true. Logical equivalence is therefore central. If two equations have exactly the same solution set, we write informally that one transformation is equivalent to the other. Adding the same expression to both sides and multiplying both sides by a nonzero quantity are reversible operations. Squaring both sides is not always reversible and can introduce extraneous solutions. This distinction becomes important whenever radicals or rational expressions appear.
+
+\begin{definition}[Solution set]
+Let $E(x)$ be an equation and let $S$ be a prescribed domain. The solution set is
+\be
+\mathcal{S}=\{x\in S:E(x)\text{ is true}\}.
+\ee
+\end{definition}
+
+\begin{remark}
+An equation may have different solution sets over $\R$ and $\C$. For example, an equation with a negative discriminant has no real roots but has two complex roots counted with multiplicity.
+\end{remark}
+
+\subsection{Monomials and polynomials}
+
+A monomial in one variable has the form $a x^n$, where $a$ is a coefficient and $n$ is a nonnegative integer. A polynomial is a finite sum of monomials,
+\be
+P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0,
+\qquad a_n\neq 0.
+\ee
+Its degree is $n$. A quadratic polynomial is a polynomial of degree two. The coefficient $a_n$ is called the leading coefficient, while $a_0$ is the constant term.
+
+Polynomial addition and multiplication remain within the set of polynomials. Division is more subtle: division by a nonzero polynomial produces a quotient and a remainder. The factor theorem states that $x-r$ divides $P(x)$ if and only if $P(r)=0$. This simple result is the algebraic bridge between roots and factorization.
+
+\begin{theorem}[Factor theorem]
+For a polynomial $P(x)$ over a field and a scalar $r$, the following statements are equivalent:
+\be
+P(r)=0
+\qquad\Longleftrightarrow\qquad
+P(x)=(x-r)Q(x)
+\ee
+for some polynomial $Q(x)$.
+\end{theorem}
+
+\begin{proof}
+By polynomial division, $P(x)=(x-r)Q(x)+R$, where the remainder $R$ is constant. Setting $x=r$ gives $P(r)=R$. Hence $P(r)=0$ if and only if $R=0$.
+\end{proof}
+
+\subsection{Algebraic identities and factorization}
+
+Several identities recur throughout quadratic algebra. The most important are
+\bse
+\begin{align}
+(a+b)^2 &= a^2+2ab+b^2,\\
+(a-b)^2 &= a^2-2ab+b^2,\\
+(a+b)(a-b) &= a^2-b^2.
+\end{align}
+\ese
+These formulas are not merely shortcuts for multiplication. They provide the mechanism behind completing the square, which in turn produces both the quadratic formula and the canonical form of a parabola.
+
+A quadratic expression can sometimes be factored by inspection. For example,
+\be
+x^2-5x+6=(x-2)(x-3).
+\ee
+The factorization immediately reveals the roots. When inspection is not practical, completing the square or the quadratic formula gives a systematic method.
+
+\subsection{Equivalent transformations of equations}
+
+Suppose $A(x)=B(x)$. Adding the same expression $C(x)$ to both sides gives an equivalent equation. Multiplication by a nonzero constant is also reversible. Division by an expression depending on $x$ is reversible only after excluding the values for which that expression vanishes. The general principle is that every algebraic operation used in solving an equation must be checked for reversibility on the chosen domain.
+
+Completing the square is a sequence of reversible transformations when the leading coefficient is nonzero. This fact is the logical basis of the derivation in Sec.~\ref{sec:quadratic_formula}. By contrast, replacing $A=B$ by $A^2=B^2$ yields the weaker statement $A=\pm B$, so a later verification may be required.
+
+\subsection{Functions, zeros, and graphs}
+
+A function $f:A\to B$ assigns to each $x\in A$ exactly one value $f(x)\in B$. The set $A$ is the domain, $B$ is the codomain, and the set of values actually assumed by the function is its image. A zero or root of $f$ is a number $r$ in the domain such that $f(r)=0$.
+
+For a polynomial function, the equation $P(x)=0$ asks for the intersections of the graph $y=P(x)$ with the $x$-axis when real coordinates are used. This gives the first geometric interpretation of the discriminant: two real roots correspond to two intersections, a repeated root corresponds to tangency to the axis, and nonreal roots correspond to the absence of real intersections.
+
+\begin{exercise}
+Factor each polynomial whenever possible over the integers: $x^2-9$, $x^2+7x+12$, $2x^2-5x-3$, and $x^2+4$.
+\end{exercise}
+
+\begin{exercise}
+Explain why the transformation $x=1\Rightarrow x^2=1$ is valid but the reverse implication is false. Identify the extra solution introduced by reversing the argument.
+\end{exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

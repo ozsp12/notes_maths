@@ -1,0 +1,211 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{dcolumn}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{natbib}
+\usepackage[obeyspaces,hyphens]{url}
+\usepackage{lscape}
+\usepackage{nicefrac}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{empheq}
+\usepackage{fancyhdr}
+\usepackage{xurl}
+\usepackage{ragged2e}
+\usepackage{microtype}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,angles,quotes,positioning}
+\usepackage[
+    unicode=true,
+    pdfencoding=auto,
+    psdextra,
+    plainpages=false,
+    pdfpagelabels,
+    pagebackref=false,
+    hyperindex,
+    breaklinks=true,
+    colorlinks=true,
+    citecolor=black,
+    linkcolor=black,
+    urlcolor=blue,
+    filecolor=black,
+    bookmarksopen=true
+]{hyperref}
+\usepackage[
+    a4paper,
+    left=18mm,
+    right=18mm,
+    top=16mm,
+    bottom=18mm,
+    headheight=15.8pt,
+    headsep=4mm,
+    footskip=8mm,
+    includeheadfoot
+]{geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pdfstringdefDisableCommands{%
+  \def\textit#1{#1}%
+  \def\emph#1{#1}%
+  \def\textbf#1{#1}%
+  \def\\{ }%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\def\ni{\noindent}
+\newcommand{\bse}{\begin{subequations}}
+\newcommand{\ese}{\end{subequations}}
+\newcommand{\lb}[1]{\label{#1}}
+\newcommand{\dd}{{\mathrm{d}}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\deri}[2]{\ensuremath{\frac{\dd #1}{\dd #2}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mathematical and didactic environments
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{remark}{Remark}[section]
+
+\numberwithin{equation}{section}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\small\itshape\nouppercase{\leftmark}}
+\fancyfoot[L]{\scriptsize Osvaldo L. Santos-Pereira --- \href{mailto:olsp@if.ufrj.br}{olsp@if.ufrj.br}}
+\fancyfoot[C]{\scriptsize \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\urlstyle{same}
+
+% Author block for cover page
+\newcommand{\coverauthor}[4]{%
+{\large\bfseries #1\par}
+\vspace{0.02cm}
+{\normalsize\href{mailto:#2}{#2}\par}
+\vspace{0.02cm}
+{\normalsize\color{blue}\url{#3}\par}
+\vspace{0.02cm}
+{\normalsize\itshape #4\par}
+\vspace{0.8cm}
+}
+
+\long\def\coveraboutme#1{%
+\vspace{0.3cm}
+\begingroup
+{\large\bfseries\color{black} About Me\par}
+\vspace{0.18cm}
+\small
+\color{black!85}
+\justifying
+\setlength{\parindent}{18pt}
+\setlength{\parskip}{3pt}
+\setlength{\emergencystretch}{2em}
+#1
+\par
+\endgroup
+\vspace{0.5cm}
+}
+
+\newcommand{\sociallink}[2]{%
+\noindent{\footnotesize\color{black!80} #1: \url{#2}\par}
+}
+
+\newcommand{\chaptercover}[4]{%
+\begin{titlepage}
+\thispagestyle{empty}
+\raggedright
+\setlength{\parindent}{0pt}
+\vspace*{0.2cm}
+{\fontsize{34}{40}\selectfont\bfseries #1\par}
+\vspace{1.0cm}
+{\fontsize{26}{30}\selectfont\bfseries #2\par}
+\vspace{1.5cm}
+\rule{\textwidth}{2.0pt}
+\vspace{1.0cm}
+#3
+\vspace{0.3cm}
+#4
+\vfill
+\end{titlepage}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\chaptercover
+{Quadratic Equations}
+{Algebra, Geometry, Complex Roots, Tangents, and Applications}
+{
+\coverauthor
+{Osvaldo L. Santos-Pereira}
+{olsp@if.ufrj.br}
+{https://ozsp12.github.io/}
+{Physics Institute of Federal University of Rio de Janeiro (UFRJ)}
+}
+{
+\coveraboutme{
+\noindent
+I hold a PhD in Physics from the Federal University of Rio de Janeiro (UFRJ), a Master's degree in Physics from the State University of Campinas (Unicamp), a Master's degree in Data Science and Analytics from the University of S\~ao Paulo (MBA USP-ESALQ), a postgraduate degree in Quantum Computing from SENAI-CIMATEC, and a Bachelor's degree in Physics from Unicamp.
+
+\noindent
+I am currently a Fellow Researcher at the Physics Institute of the Federal University of Rio de Janeiro (UFRJ), where I research Warp Drive Theory, Classical General Relativity, Cosmology, Econophysics, and Computational Physics. Other research interests include Wormhole Theory, Black Hole Theory, Quantum Gravity, Quantum Computing and Information, Mathematics, and Artificial Intelligence.
+
+\noindent
+I work in the private sector as a data science consultant and an artificial intelligence specialist. I conduct research projects across several industries, including education, health, medical, e-commerce, and large retail.
+
+\vspace{0.3cm}
+\sociallink{Curr\'iculo Lattes}{http://lattes.cnpq.br/6730251976463283}
+\sociallink{ResearchGate}{https://www.researchgate.net/profile/Osvaldo-Santos-Pereira}
+\sociallink{ORCID}{https://orcid.org/0000-0003-2231-517X}
+\sociallink{Google Scholar}{https://scholar.google.com/citations?user=HIZp0X8AAAAJ&hl=en}
+\sociallink{LinkedIn}{https://www.linkedin.com/in/ozsp12}
+\sociallink{Substack}{https://substack.com/@olsp1982}
+\sociallink{GitHub}{https://github.com/ozsp12}
+\sociallink{YouTube}{https://www.youtube.com/@ozlsp12}
+}
+}
+
+\tableofcontents
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{sections/01_introduction}
+
+\input{sections/02_elementary_concepts}
+
+\input{sections/03_quadratic_equations}
+
+\input{sections/04_geometry_of_parabola}
+
+\input{sections/05_complex_numbers}
+
+\input{sections/06_derivatives_tangents}
+
+\input{sections/07_applications}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliography{references}
+\bibliographystyle{unsrt}
+
+\end{document}

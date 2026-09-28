@@ -1,0 +1,109 @@
+\section{Applications}
+
+Quadratic equations arise whenever a quantity depends linearly on one variable and quadratically on another, whenever constant acceleration is integrated twice in time, or whenever an optimization problem reduces to a parabola. The examples below are chosen to show how the discriminant, vertex, and factorization acquire concrete interpretations rather than merely producing numerical answers.
+
+\subsection{The safety parabola in projectile motion}
+
+Consider projectile motion in a uniform gravitational field with no air resistance. A projectile is launched from the origin with fixed speed $v_0$ and angle $\theta$. Eliminating time from the standard kinematic equations gives the trajectory
+\be
+ y=x\tan\theta-
+ \frac{g x^2}{2v_0^2\cos^2\theta}.
+\lb{eq:projectile}
+\ee
+Set $T=\tan\theta$ and use $1/\cos^2\theta=1+T^2$:
+\be
+ y=xT-\frac{g x^2}{2v_0^2}(1+T^2).
+\ee
+For a fixed point $(x,y)$, this is a quadratic equation in $T$,
+\be
+\frac{g x^2}{2v_0^2}T^2-xT+
+\left(y+\frac{g x^2}{2v_0^2}\right)=0.
+\ee
+A real launch angle exists only if the discriminant of this quadratic is nonnegative. After simplification,
+\be
+ y\le \frac{v_0^2}{2g}-\frac{g x^2}{2v_0^2}.
+\lb{eq:safety_parabola}
+\ee
+The boundary
+\be
+ y_s(x)=\frac{v_0^2}{2g}-\frac{g x^2}{2v_0^2}
+\ee
+is called the \emph{safety parabola}. Every point below it can be reached by at least one launch angle in the ideal model, while a point above it cannot. Points on the boundary correspond to a repeated root in $T$, meaning that exactly one launch angle reaches the point.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=0.9,>=Stealth]
+\draw[->] (-0.2,0)--(8.2,0) node[right] {$x$};
+\draw[->] (0,-0.2)--(0,5.2) node[above] {$y$};
+\draw[very thick,blue!70!black,domain=0:7.6,samples=100] plot (\x,{4.6-0.08*\x*\x});
+\draw[gray,domain=0:7.5,samples=100] plot (\x,{1.25*\x-0.14*\x*\x});
+\draw[gray,domain=0:7.5,samples=100] plot (\x,{0.75*\x-0.08*\x*\x});
+\draw[gray,domain=0:5.4,samples=100] plot (\x,{1.9*\x-0.30*\x*\x});
+\node[blue!70!black] at (5.7,3.1) {safety parabola};
+\end{tikzpicture}
+\caption{The safety parabola is the envelope of projectile trajectories with fixed launch speed in the idealized uniform-gravity model.}
+\lb{fig:safety_parabola}
+\end{figure}
+
+\subsection{Scalar kinematics with constant acceleration}
+
+For one-dimensional motion with constant acceleration $a$, position is
+\be
+ x(t)=x_0+v_0t+\frac12at^2.
+\lb{eq:kinematics}
+\ee
+To determine when the particle reaches a position $x=x_f$, solve
+\be
+\frac12at^2+v_0t+(x_0-x_f)=0.
+\ee
+The discriminant is
+\be
+\Delta_t=v_0^2-2a(x_0-x_f)
+=v_0^2+2a(x_f-x_0).
+\ee
+The condition $\Delta_t\ge0$ determines whether the target position is reachable within the mathematical model. The two real roots, when both are physically admissible, can represent two times at which the same position is visited, for example during ascent and descent in vertical motion.
+
+\begin{example}
+A particle moves vertically according to
+\be
+ y(t)=20t-5t^2.
+\ee
+The times at which $y=15$ satisfy
+\be
+5t^2-20t+15=0,
+\ee
+so $t=1\,\mathrm{s}$ and $t=3\,\mathrm{s}$. The same height is reached once on the way up and once on the way down. The vertex occurs at $t=2\,\mathrm{s}$, where the height is maximal.
+\end{example}
+
+\subsection{Optimization problems}
+
+Many elementary optimization problems reduce to maximizing or minimizing a quadratic. Suppose a rectangle has perimeter $P$. If one side has length $x$, the other is $P/2-x$, so the area is
+\be
+A(x)=x\left(\frac{P}{2}-x\right)
+=-x^2+\frac{P}{2}x.
+\ee
+Since the leading coefficient is negative, the area is maximal at the vertex,
+\be
+x=\frac{P}{4}.
+\ee
+The other side has the same length, so among rectangles with fixed perimeter the square has maximal area. This conclusion can be obtained by completing the square or by setting $A'(x)=0$.
+
+Quadratic optimization also appears in elementary economics. If a linear demand model makes price decrease linearly with quantity, revenue is the product of price and quantity and is therefore quadratic. The vertex then gives the revenue-maximizing quantity, subject to the limitations of the model. The mathematical procedure is simple; the modeling assumptions require more care.
+
+\subsection{A modeling perspective}
+
+A quadratic model should not be used merely because a parabola fits a few points. In physics, the quadratic dependence of position on time under constant acceleration follows from a dynamical assumption. In geometry, the quadratic equation follows from a locus definition. In optimization, it often follows from multiplying linear expressions. These structural derivations are stronger than curve fitting because they explain why a quadratic should appear and identify the meaning of its coefficients.
+
+The recurring role of the discriminant is especially instructive. In pure algebra it distinguishes root types. In geometry it counts intersections. In projectile motion it separates reachable from unreachable points. In kinematics it separates attainable from unattainable events. One algebraic invariant therefore carries different interpretations without changing its mathematical definition.
+
+\begin{exercise}
+A projectile is launched from the origin with speed $v_0$. Starting from Eq.~\eqref{eq:projectile}, reproduce the derivation of the safety parabola and identify the launch angle corresponding to a point on its boundary.
+\end{exercise}
+
+\begin{exercise}
+A particle has position $x(t)=4+12t-2t^2$. Determine its maximum position and the times at which it passes through $x=14$.
+\end{exercise}
+
+\begin{exercise}
+A farmer has $100$ meters of fencing to enclose a rectangular region against a straight wall, so only three sides require fencing. Formulate the area as a quadratic function and determine the maximizing dimensions.
+\end{exercise}
