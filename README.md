@@ -33,4 +33,28 @@ Probability and statistics are maintained separately in my statistics repository
 
 I am **Osvaldo L. Santos-Pereira**, a physicist, researcher, data scientist, and writer affiliated with the **Institute of Physics of Universidade Federal do Rio de Janeiro (UFRJ)**. My interests include pure and applied mathematics, gravitation and general relativity, mathematical and computational physics, quantum computing, statistical methods, data science, and artificial intelligence. My work is centered on connecting analytical reasoning, mathematical structure, numerical computation, and scientific communication.
 
-**Osvaldo L. Santos-Pereira** — [Academic webpage](https://ozsp12.github.io/) · [Lattes](http://lattes.cnpq.br/6730251976463283) · [ORCID](https://orcid.org/0000-0003-2231-517X) · [Google Scholar](https://scholar.google.com/citations?user=HIZp0X8AAAAJ&hl=en) · [ResearchGate](https://www.researchgate.net/profile/Osvaldo-Santos-Pereira) · [GitHub](https://github.com/ozsp12) · [LinkedIn](https://www.linkedin.com/in/ozsp12) · [Substack](https://substack.com/@olsp1982) · [Medium](https://medium.com/@ozsp12) · [YouTube](https://www.youtube.com/@ozlsp12) · [X](https://x.com/ozsp12)
+**Osvaldo L. Santos-Pereira**
+
+<p>
+  <a href="https://ozsp12.github.io/" title="Academic webpage"><img src="https://api.iconify.design/mdi:web.svg?color=%23888888" height="28" alt="Academic webpage"></a>
+  &nbsp;
+  <a href="http://lattes.cnpq.br/6730251976463283" title="Lattes"><img src="https://api.iconify.design/mdi:account-school.svg?color=%23888888" height="28" alt="Lattes"></a>
+  &nbsp;
+  <a href="https://orcid.org/0000-0003-2231-517X" title="ORCID"><img src="https://cdn.simpleicons.org/orcid/A6CE39" height="28" alt="ORCID"></a>
+  &nbsp;
+  <a href="https://scholar.google.com/citations?user=HIZp0X8AAAAJ&hl=en" title="Google Scholar"><img src="https://cdn.simpleicons.org/googlescholar/4285F4" height="28" alt="Google Scholar"></a>
+  &nbsp;
+  <a href="https://www.researchgate.net/profile/Osvaldo-Santos-Pereira" title="ResearchGate"><img src="https://cdn.simpleicons.org/researchgate/00CCBB" height="28" alt="ResearchGate"></a>
+  &nbsp;
+  <a href="https://github.com/ozsp12" title="GitHub"><img src="https://cdn.simpleicons.org/github/888888" height="28" alt="GitHub"></a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/ozsp12" title="LinkedIn"><img src="https://cdn.simpleicons.org/linkedin/0A66C2" height="28" alt="LinkedIn"></a>
+  &nbsp;
+  <a href="https://substack.com/@olsp1982" title="Substack"><img src="https://cdn.simpleicons.org/substack/FF6719" height="28" alt="Substack"></a>
+  &nbsp;
+  <a href="https://medium.com/@ozsp12" title="Medium"><img src="https://cdn.simpleicons.org/medium/888888" height="28" alt="Medium"></a>
+  &nbsp;
+  <a href="https://www.youtube.com/@ozlsp12" title="YouTube"><img src="https://cdn.simpleicons.org/youtube/FF0000" height="28" alt="YouTube"></a>
+  &nbsp;
+  <a href="https://x.com/ozsp12" title="X"><img src="https://cdn.simpleicons.org/x/888888" height="28" alt="X"></a>
+</p>
