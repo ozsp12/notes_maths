@@ -1,0 +1,103 @@
+\section{Complex Numbers and Nonreal Roots}
+
+The negative-discriminant case is not a failure of the quadratic formula; it is evidence that the real number system is not algebraically closed. Complex numbers enlarge the domain so that every quadratic equation has two roots counted with multiplicity. This section reviews the minimum complex-number theory needed to interpret those roots geometrically and algebraically.
+
+\subsection{The complex plane}
+
+A complex number has the form
+\be
+z=x+iy,
+\qquad x,y\in\R,
+\qquad i^2=-1.
+\ee
+Its real and imaginary parts are $\operatorname{Re}z=x$ and $\operatorname{Im}z=y$. Geometrically, $z$ is represented by the point $(x,y)$ in the complex plane. Its conjugate and modulus are
+\be
+\overline{z}=x-iy,
+\qquad
+|z|=\sqrt{x^2+y^2}.
+\ee
+The product with its conjugate is real and nonnegative:
+\be
+z\overline{z}=|z|^2.
+\ee
+
+\subsection{Square roots of negative real numbers}
+
+If $r>0$, then
+\be
+\sqrt{-r}=i\sqrt{r}
+\ee
+for the principal square root. Therefore, if the discriminant is negative, write
+\be
+\Delta=-D,
+\qquad D>0.
+\ee
+Then
+\be
+\sqrt{\Delta}=i\sqrt{D}.
+\ee
+The quadratic formula becomes
+\be
+x_{1,2}=\frac{-b}{2a}\pm i\frac{\sqrt{-\Delta}}{2a}.
+\lb{eq:complex_roots}
+\ee
+
+\subsection{Conjugate roots for real coefficients}
+
+\begin{theorem}[Complex conjugate root theorem]
+If a polynomial has real coefficients and $z\in\C$ is a root, then $\overline{z}$ is also a root with the same multiplicity.
+\end{theorem}
+
+\begin{proof}
+For a polynomial $P$ with real coefficients,
+\be
+\overline{P(z)}=P(\overline{z}).
+\ee
+If $P(z)=0$, then $P(\overline{z})=\overline{0}=0$.
+\end{proof}
+
+Equation~\eqref{eq:complex_roots} is a direct quadratic example. The two nonreal roots have common real part $-b/(2a)$ and opposite imaginary parts. Their midpoint in the complex plane lies on the real axis at the same coordinate as the axis of symmetry of the real parabola.
+
+\subsection{Factorization over $\C$}
+
+When $\Delta<0$ and $a,b,c\in\R$, the factorization
+\be
+ax^2+bx+c=a(x-z)(x-\overline{z})
+\ee
+still holds. Expanding gives
+\be
+x^2-(z+\overline{z})x+z\overline{z},
+\ee
+so the Vi\`ete--Girard relations remain valid:
+\be
+z+\overline{z}=-\frac{b}{a},
+\qquad
+z\overline{z}=\frac{c}{a}.
+\ee
+The first relation determines twice the real part of the root and the second gives its squared modulus when the polynomial is monic.
+
+\begin{example}
+For $x^2-4x+13=0$, the discriminant is $\Delta=16-52=-36$. Hence
+\be
+x=2\pm3i.
+\ee
+The roots are conjugate, their sum is $4$, and their product is $13$.
+\end{example}
+
+\subsection{Algebraic consequences}
+
+A real quadratic with negative discriminant is irreducible over $\R$ but reducible over $\C$. This is the simplest illustration of how factorization depends on the coefficient field. The polynomial $x^2+1$ is irreducible over $\R$ but factors as
+\be
+x^2+1=(x-i)(x+i)
+\ee
+in $\C[x]$. The distinction between solving an equation and choosing the ambient number system is therefore fundamental rather than technical.
+
+\begin{exercise}
+Find the roots of $3x^2+6x+10=0$ and represent them in the complex plane.
+\end{exercise}
+
+\begin{exercise}
+Let $z$ and $\overline z$ be the roots of the monic quadratic $x^2+bx+c$ with $b,c\in\R$ and $\Delta<0$. Express $\operatorname{Re}z$ and $|z|$ in terms of $b$ and $c$.
+\end{exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

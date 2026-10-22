@@ -1,0 +1,273 @@
+\section{Quadratic Equations}
+
+The general quadratic equation is the first polynomial equation for which a complete symbolic theory can be developed with elementary tools. Its coefficients determine the number and type of roots, the geometry of its graph, its factorization, and its extremum. The theory is sufficiently simple to be explicit and sufficiently rich to illustrate several central mathematical themes.
+
+\subsection{Historical route from problems to symbols}
+
+Ancient quadratic problems were not written as equations in the modern sense. Mesopotamian procedures were expressed in words and often concerned lengths and areas; nevertheless, many are equivalent to solving quadratic relations \cite{robson2008}. Al-Khw\={a}rizm\={i} classified quadratic equations into separate positive-coefficient types because negative coefficients were not treated as freely as they are in modern algebra. His geometric arguments amount to completing the square \cite{rosen1831,swetzkatz2011}. Indian algebraists developed rules in a different tradition, with Brahmagupta and Bh\={a}skara II occupying prominent positions \cite{plofker2009,colebrooke1817}. Modern symbolic notation compressed these rhetorical procedures into a single equation and, eventually, a single formula.
+
+The historical lesson is mathematical as well as cultural. The compact expression used today depends on an enlarged number system, signed coefficients, symbolic variables, and an acceptance of multiple roots. Once these conventions are in place, cases that had historically required separate verbal rules become different regimes of one algebraic object.
+
+\subsection{Definition and standard form}
+
+\begin{definition}[Quadratic equation]
+A quadratic equation in one variable is an equation of the form
+\be
+ax^2+bx+c=0,
+\qquad a\neq 0,
+\lb{eq:quadratic_standard}
+\ee
+where $a$, $b$, and $c$ are coefficients in a specified number system.
+\end{definition}
+
+The requirement $a\neq0$ is essential. If $a=0$, Eq.~\eqref{eq:quadratic_standard} is linear or degenerate. Multiplying all coefficients by the same nonzero constant does not change the roots, so the triple $(a,b,c)$ represents the same equation as $(\lambda a,\lambda b,\lambda c)$ for every $\lambda\neq0$.
+
+\subsection{Completing the square and the quadratic formula}
+\label{sec:quadratic_formula}
+
+Starting from Eq.~\eqref{eq:quadratic_standard}, divide by $a$:
+\be
+x^2+\frac{b}{a}x+\frac{c}{a}=0.
+\ee
+Move the constant term to the right-hand side,
+\be
+x^2+\frac{b}{a}x=-\frac{c}{a},
+\ee
+and add the square of half the coefficient of $x$ to both sides:
+\be
+x^2+\frac{b}{a}x+\frac{b^2}{4a^2}
+=
+\frac{b^2}{4a^2}-\frac{c}{a}.
+\ee
+The left-hand side is a perfect square,
+\be
+\left(x+\frac{b}{2a}\right)^2
+=
+\frac{b^2-4ac}{4a^2}.
+\lb{eq:completed_square}
+\ee
+Taking square roots gives
+\be
+x+\frac{b}{2a}
+=
+\pm\frac{\sqrt{b^2-4ac}}{2a},
+\ee
+where the square root is interpreted in the appropriate number system. Hence
+\be
+\boxed{
+x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+}.
+\lb{eq:quadratic_formula}
+\ee
+
+\begin{remark}[On the name ``Bhaskara formula'']
+Equation~\eqref{eq:quadratic_formula} is called the \emph{quadratic formula} in the international literature. The widespread Brazilian name ``Bhaskara formula'' recognizes an important Indian algebraic tradition, but it should not be interpreted as a historically exclusive attribution. Equivalent methods and formulas have a long history involving Mesopotamian mathematics, Brahmagupta, al-Khw\={a}rizm\={i}, Bh\={a}skara II, and later symbolic algebra \cite{katz2009,plofker2009,boyer2011}.
+\end{remark}
+
+\subsection{The discriminant and the three solution regimes}
+
+\begin{definition}[Discriminant]
+The discriminant of the quadratic polynomial $ax^2+bx+c$ is
+\be
+\Delta=b^2-4ac.
+\lb{eq:discriminant}
+\ee
+\end{definition}
+
+The sign of $\Delta$ classifies the roots over $\R$.
+
+\begin{proposition}[Discriminant classification]
+Let $a,b,c\in\R$ with $a\neq0$.
+If $\Delta>0$, the equation has two distinct real roots. If $\Delta=0$, it has one repeated real root. If $\Delta<0$, it has no real roots and has two nonreal complex conjugate roots.
+\end{proposition}
+
+\begin{proof}
+The conclusion follows directly from Eq.~\eqref{eq:quadratic_formula}. The quantity $\sqrt{\Delta}$ is nonzero real when $\Delta>0$, zero when $\Delta=0$, and purely imaginary up to a real factor when $\Delta<0$.
+\end{proof}
+
+\begin{table}[htbp]
+\centering
+\caption{Algebraic and geometric meaning of the discriminant for real coefficients.}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Condition & Roots over $\R$ & Graphical meaning \\
+\midrule
+$\Delta>0$ & two distinct roots & two crossings of the $x$-axis \\
+$\Delta=0$ & one double root & tangency to the $x$-axis \\
+$\Delta<0$ & no real roots & no intersection with the $x$-axis \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=0.8,>=Stealth]
+% Delta > 0
+\begin{scope}[xshift=-6cm]
+\draw[->] (-2.2,0)--(2.2,0) node[right] {$x$};
+\draw[->] (0,-1.8)--(0,2.4) node[above] {$y$};
+\draw[thick,domain=-1.9:1.9,samples=80] plot (\x,{0.7*\x*\x-1.1});
+\fill (-1.253,0) circle (1.8pt); \fill (1.253,0) circle (1.8pt);
+\node at (0,-2.25) {$\Delta>0$};
+\end{scope}
+% Delta = 0
+\begin{scope}
+\draw[->] (-2.2,0)--(2.2,0) node[right] {$x$};
+\draw[->] (0,-1.8)--(0,2.4) node[above] {$y$};
+\draw[thick,domain=-1.9:1.9,samples=80] plot (\x,{0.7*\x*\x});
+\fill (0,0) circle (1.8pt);
+\node at (0,-2.25) {$\Delta=0$};
+\end{scope}
+% Delta < 0
+\begin{scope}[xshift=6cm]
+\draw[->] (-2.2,0)--(2.2,0) node[right] {$x$};
+\draw[->] (0,-1.8)--(0,2.4) node[above] {$y$};
+\draw[thick,domain=-1.9:1.9,samples=80] plot (\x,{0.7*\x*\x+0.8});
+\node at (0,-2.25) {$\Delta<0$};
+\end{scope}
+\end{tikzpicture}
+\caption{Three geometric regimes of a quadratic with $a>0$. For $a<0$ the figures are reflected vertically, but the number of real roots is unchanged.}
+\lb{fig:discriminant_cases}
+\end{figure}
+
+For polynomials of degree greater than two, a discriminant can also be defined. In general it is a polynomial in the coefficients that vanishes precisely when the polynomial has a repeated root over an algebraic closure. For a quadratic, this general construction reduces to Eq.~\eqref{eq:discriminant}. Thus the familiar quantity $b^2-4ac$ is the first instance of a much broader algebraic invariant.
+
+\subsection{The parabola and the geometric meaning of the roots}
+
+The graph of
+\be
+f(x)=ax^2+bx+c
+\ee
+is a parabola. If $a>0$, the graph opens upward and the function is convex. If $a<0$, the graph opens downward and the function is concave. The real roots are precisely the $x$-coordinates at which the graph intersects the $x$-axis. A repeated root means that the vertex lies on the axis and the graph is tangent to it.
+
+Completing the square gives the canonical form
+\be
+f(x)=a\left(x+\frac{b}{2a}\right)^2-\frac{\Delta}{4a}.
+\lb{eq:vertex_form}
+\ee
+Equation~\eqref{eq:vertex_form} already displays the axis of symmetry and the vertex without using calculus.
+
+\begin{proposition}[Vertex]
+The parabola $y=ax^2+bx+c$ has vertex
+\be
+\left(x_v,y_v\right)
+=
+\left(-\frac{b}{2a},-\frac{\Delta}{4a}\right).
+\lb{eq:vertex}
+\ee
+\end{proposition}
+
+\subsection{Vi\`ete--Girard relations and notable identities}
+
+Let the roots be $x_1$ and $x_2$, counted with multiplicity. If the polynomial factors as
+\be
+ax^2+bx+c=a(x-x_1)(x-x_2),
+\ee
+then expansion gives
+\be
+ax^2-a(x_1+x_2)x+a x_1x_2.
+\ee
+Comparing coefficients yields the classical root--coefficient relations.
+
+\begin{theorem}[Vi\`ete--Girard relations]
+For $a\neq0$,
+\bse
+\begin{align}
+x_1+x_2&=-\frac{b}{a},\lb{eq:viete_sum}\\
+x_1x_2&=\frac{c}{a}.\lb{eq:viete_product}
+\end{align}
+\ese
+\end{theorem}
+
+In much of the international literature these are called Vi\`ete's formulas. The name Girard also appears in historical and pedagogical traditions because Albert Girard developed systematic relations between roots and coefficients in the early seventeenth century \cite{katz2009,boyer2011}.
+
+Several useful identities follow immediately:
+\bse
+\begin{align}
+x_1^2+x_2^2
+&=(x_1+x_2)^2-2x_1x_2
+=\frac{b^2-2ac}{a^2},\\
+(x_1-x_2)^2
+&=(x_1+x_2)^2-4x_1x_2
+=\frac{\Delta}{a^2},\\
+\frac{1}{x_1}+\frac{1}{x_2}
+&=\frac{x_1+x_2}{x_1x_2}
+=-\frac{b}{c},\qquad c\neq0.
+\end{align}
+\ese
+The second identity shows directly that the separation between two real roots is
+\be
+|x_1-x_2|=\frac{\sqrt{\Delta}}{|a|}.
+\lb{eq:root_separation}
+\ee
+Thus the discriminant controls not only whether the roots are real but also how far apart they are on the real line.
+
+\subsection{Rational and integer coefficients}
+
+When $a,b,c\in\Z$, arithmetic information can be extracted before applying the quadratic formula.
+
+\begin{theorem}[Rational Root Theorem]
+Let $P(x)=a_nx^n+\cdots+a_0$ have integer coefficients. If a rational number $p/q$ in lowest terms is a root, then $p$ divides $a_0$ and $q$ divides $a_n$.
+\end{theorem}
+
+For a quadratic $ax^2+bx+c$, every rational root must therefore have numerator dividing $c$ and denominator dividing $a$. In the monic case $x^2+bx+c$ with integer coefficients, every rational root is an integer divisor of $c$.
+
+\begin{proposition}[Quadratic irreducibility over $\Q$]
+Let $a,b,c\in\Q$ with $a\neq0$. The polynomial $ax^2+bx+c$ is reducible over $\Q$ if and only if $\Delta=b^2-4ac$ is a square in $\Q$.
+\end{proposition}
+
+\begin{proof}
+By the quadratic formula, the roots lie in $\Q$ exactly when $\sqrt{\Delta}\in\Q$. A quadratic over a field is reducible exactly when it has a root in that field.
+\end{proof}
+
+For a monic polynomial $x^2+bx+c$ with $b,c\in\Z$, rational roots are automatically integers. This is a special case of Gauss's lemma and is often useful for factorization by inspection.
+
+\begin{example}
+Consider $2x^2-5x-3=0$. The Rational Root Theorem restricts rational candidates to $\pm1,\pm3,\pm\frac12,\pm\frac32$. Testing gives $x=3$ and $x=-\frac12$, so
+\be
+2x^2-5x-3=(2x+1)(x-3).
+\ee
+\end{example}
+
+\subsection{Maximum and minimum without calculus}
+
+Equation~\eqref{eq:vertex_form} gives the extremum immediately. Since every square is nonnegative,
+\be
+\left(x+\frac{b}{2a}\right)^2\ge0.
+\ee
+If $a>0$, multiplication by $a$ preserves the inequality and the minimum value is $-\Delta/(4a)$. If $a<0$, the inequality reverses after multiplication and the same value is the maximum. Therefore
+\be
+f(x)\begin{cases}
+\ge -\dfrac{\Delta}{4a},&a>0,\\[1ex]
+\le -\dfrac{\Delta}{4a},&a<0.
+\end{cases}
+\ee
+The extremum occurs at $x=-b/(2a)$. No derivative is needed; the conclusion follows from the geometry of a square and the sign of the leading coefficient.
+
+The sign of the whole quadratic can also be read from the roots. For $\Delta>0$ and $a>0$, the polynomial is positive outside the interval between the roots and negative inside it. For $a<0$ the signs reverse. If $\Delta=0$, the polynomial has the sign of $a$ except at the repeated root, where it vanishes. If $\Delta<0$, it has the sign of $a$ for all real $x$.
+
+\subsection{The Fundamental Theorem of Algebra and factorization}
+
+\begin{theorem}[Fundamental Theorem of Algebra]
+Every nonconstant polynomial with complex coefficients has at least one complex root. Equivalently, a degree-$n$ polynomial over $\C$ factors into $n$ linear factors when roots are counted with multiplicity.
+\end{theorem}
+
+For a quadratic this means that, regardless of the sign of the real discriminant,
+\be
+ax^2+bx+c=a(x-x_1)(x-x_2)
+\ee
+for suitable $x_1,x_2\in\C$. The discriminant does not decide whether roots exist in $\C$; it decides whether the roots are distinct and, for real coefficients, whether they lie on the real axis.
+
+\begin{exercise}
+For $x^2-6x+k=0$, determine the values of $k$ for which the equation has two distinct real roots, one repeated real root, and two nonreal complex roots.
+\end{exercise}
+
+\begin{exercise}
+Using only the Vi\`ete--Girard relations, compute $x_1^3+x_2^3$ in terms of $a$, $b$, and $c$.
+\end{exercise}
+
+\begin{exercise}
+Prove that a monic quadratic with integer coefficients cannot have exactly one irrational root and one rational root.
+\end{exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

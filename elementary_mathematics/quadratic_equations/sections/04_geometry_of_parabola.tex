@@ -1,0 +1,105 @@
+\section{Geometry of the Parabola}
+
+The parabola is simultaneously the graph of a quadratic function and one of the classical conic sections. The functional description emphasizes coefficients and roots; the geometric description emphasizes distance, symmetry, focus, directrix, and reflection. Passing between these descriptions reveals which features of a quadratic equation are coordinate-dependent and which belong to the intrinsic geometry of the conic.
+
+\subsection{Conic sections}
+
+A conic section is obtained by intersecting a plane with a double circular cone. Depending on the inclination of the plane, the nondegenerate intersection is an ellipse, a parabola, or a hyperbola. In analytic geometry, the same curves arise as loci satisfying quadratic equations in two variables. The parabola is the boundary case between ellipse and hyperbola and admits a particularly simple focus--directrix definition \cite{coxeter1969}.
+
+\subsection{Focus--directrix definition and locus}
+
+\begin{definition}[Parabola]
+Given a fixed point $F$ called the focus and a fixed line $\ell$ called the directrix, with $F\notin\ell$, the parabola is the locus of points $P$ satisfying
+\be
+PF=d(P,\ell).
+\lb{eq:parabola_locus}
+\ee
+\end{definition}
+
+Choose coordinates such that the axis of symmetry is the $y$-axis, the vertex is the origin, the focus is $F=(0,p)$, and the directrix is $y=-p$, with $p\neq0$. For $P=(x,y)$, Eq.~\eqref{eq:parabola_locus} becomes
+\be
+\sqrt{x^2+(y-p)^2}=|y+p|.
+\ee
+Squaring and simplifying gives
+\be
+x^2=4py.
+\lb{eq:standard_parabola}
+\ee
+Thus
+\be
+y=\frac{1}{4p}x^2.
+\ee
+The coefficient of $x^2$ therefore encodes the focal distance.
+
+\subsection{Vertex form and geometric parameters}
+
+The translated parabola
+\be
+ y=a(x-h)^2+k
+\lb{eq:translated_parabola}
+\ee
+has vertex $(h,k)$ and axis $x=h$. Comparing Eq.~\eqref{eq:translated_parabola} with the standard form gives
+\be
+p=\frac{1}{4a}.
+\lb{eq:focal_parameter}
+\ee
+Hence the focus and directrix are
+\bse
+\begin{align}
+F&=\left(h,k+\frac{1}{4a}\right),\\
+\ell&:\quad y=k-\frac{1}{4a}.
+\end{align}
+\ese
+For $a>0$, the focus is above the vertex and the parabola opens upward; for $a<0$, it opens downward. The latus rectum is the chord through the focus perpendicular to the axis, and its length is $4|p|=1/|a|$.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=1.0,>=Stealth]
+\draw[->] (-3.3,0)--(3.3,0) node[right] {$x$};
+\draw[->] (0,-2.2)--(0,3.2) node[above] {$y$};
+\draw[thick,domain=-2.6:2.6,samples=100] plot (\x,{0.35*\x*\x});
+\draw[dashed] (-3,-1.43)--(3,-1.43) node[right] {directrix};
+\fill (0,0.714) circle (2pt) node[right] {$F$};
+\fill (0,0) circle (2pt) node[below right] {$V$};
+\draw[dotted] (0,-1.43)--(0,0.714);
+\node at (1.8,2.2) {$y=a(x-h)^2+k$};
+\end{tikzpicture}
+\caption{Focus, directrix, axis, and vertex for a vertically oriented parabola.}
+\lb{fig:focus_directrix}
+\end{figure}
+
+\subsection{Roots and geometric parameters}
+
+From Eq.~\eqref{eq:vertex_form}, the zeros satisfy
+\be
+ a(x-x_v)^2+y_v=0.
+\ee
+Therefore, when real roots exist,
+\be
+(x-x_v)^2=\frac{\Delta}{4a^2},
+\ee
+so
+\be
+x_{1,2}=x_v\pm\frac{\sqrt{\Delta}}{2|a|}
+\ee
+when the two roots are ordered from left to right. Their midpoint is the axis of symmetry,
+\be
+\frac{x_1+x_2}{2}=-\frac{b}{2a}=x_v,
+\ee
+and their separation is given by Eq.~\eqref{eq:root_separation}. Thus the sum of the roots fixes the horizontal position of the axis, while the discriminant fixes their separation.
+
+\subsection{Tangent, angle bisector, and reflection property}
+
+One of the characteristic geometric properties of a parabola is its reflection law. At a point $P$, the tangent makes equal angles with the segment joining $P$ to the focus and with the line through $P$ parallel to the axis. This is the basis of parabolic reflectors: rays parallel to the axis are reflected toward the focus, and rays emitted from the focus are reflected parallel to the axis.
+
+A useful geometric construction explains the angle-bisector property without differential calculus. Let $D$ be the perpendicular projection of $P$ onto the directrix. Since $PF=PD$, the point $P$ lies on the perpendicular bisector of the segment $FD$. For a parabola in standard position, that perpendicular bisector is precisely the tangent at $P$; substituting its equation into the parabola produces a repeated intersection at $P$. Because the tangent is the perpendicular bisector of $FD$, the equal-angle reflection property follows from elementary Euclidean geometry.
+
+\begin{exercise}
+For the parabola $y=\frac18x^2-2$, determine the vertex, focus, directrix, axis, and latus-rectum length.
+\end{exercise}
+
+\begin{exercise}
+Show that the roots of $a(x-h)^2+k=0$ are symmetric about $x=h$ whenever they are real.
+\end{exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

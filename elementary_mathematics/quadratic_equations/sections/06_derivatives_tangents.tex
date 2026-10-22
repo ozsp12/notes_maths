@@ -1,0 +1,156 @@
+\section{Derivatives and Tangent Lines}
+
+The algebraic treatment already determines the vertex and the roots, but calculus places these facts in a broader framework. The derivative turns local variation into an algebraic object, supplies the slope of a tangent line, and identifies extrema through stationary points. For a quadratic function the calculations are elementary enough that every step can be written explicitly.
+
+\subsection{Derivative as a limit}
+
+For a real-valued function $f$, the derivative at $x$ is defined by
+\be
+f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h},
+\lb{eq:derivative_definition}
+\ee
+provided the limit exists. Geometrically, the quotient is the slope of a secant line through $(x,f(x))$ and $(x+h,f(x+h))$. The derivative is the limiting slope as the second point approaches the first \cite{apostol1967,spivak2008}.
+
+\subsection{Derivative of a quadratic}
+
+Let
+\be
+f(x)=ax^2+bx+c.
+\ee
+Then
+\begin{align}
+f'(x)
+&=\lim_{h\to0}\frac{a(x+h)^2+b(x+h)+c-(ax^2+bx+c)}{h}\\
+&=\lim_{h\to0}\frac{2axh+ah^2+bh}{h}\\
+&=\lim_{h\to0}\left(2ax+ah+b\right)\\
+&=2ax+b.
+\lb{eq:quadratic_derivative}
+\end{align}
+Thus the derivative of a quadratic is a linear function.
+
+\subsection{Equation of the tangent line}
+
+At a point $x=x_0$, the tangent line has slope $f'(x_0)$. Its point--slope equation is
+\be
+y-f(x_0)=f'(x_0)(x-x_0).
+\lb{eq:tangent_line}
+\ee
+For a quadratic,
+\be
+y-(ax_0^2+bx_0+c)=(2ax_0+b)(x-x_0).
+\ee
+
+\subsection{The vertex from calculus}
+
+A stationary point satisfies
+\be
+f'(x)=0.
+\ee
+Using Eq.~\eqref{eq:quadratic_derivative},
+\be
+2ax+b=0,
+\ee
+so
+\be
+x_v=-\frac{b}{2a}.
+\ee
+Substitution into $f$ gives
+\be
+ y_v=f(x_v)=-\frac{\Delta}{4a}.
+\ee
+The second derivative is
+\be
+f''(x)=2a.
+\ee
+Therefore $f''>0$ when $a>0$, so the stationary point is a minimum, and $f''<0$ when $a<0$, so it is a maximum. This reproduces the algebraic result from Sec.~3 but places it inside the general calculus theory of extrema.
+
+\subsection{Angle between the tangents at the two roots}
+
+Assume $\Delta>0$. Let
+\be
+x_1=\frac{-b+\sqrt{\Delta}}{2a},
+\qquad
+x_2=\frac{-b-\sqrt{\Delta}}{2a}.
+\ee
+Evaluating the derivative at the roots gives
+\begin{align}
+f'(x_1)
+&=2a\left(\frac{-b+\sqrt{\Delta}}{2a}\right)+b
+=\sqrt{\Delta},\\
+f'(x_2)
+&=2a\left(\frac{-b-\sqrt{\Delta}}{2a}\right)+b
+=-\sqrt{\Delta}.
+\end{align}
+Thus the tangent slopes are equal in magnitude and opposite in sign.
+
+To compute the interior angle $\alpha$ between the two tangent rays that point from their intersection toward the roots, choose direction vectors
+\be
+\mathbf{u}_1=(1,\sqrt{\Delta}),
+\qquad
+\mathbf{u}_2=(-1,\sqrt{\Delta}).
+\ee
+Their dot product is
+\be
+\mathbf{u}_1\cdot\mathbf{u}_2
+=(1)(-1)+(\sqrt{\Delta})(\sqrt{\Delta})
+=\Delta-1,
+\ee
+and their norms are
+\be
+\|\mathbf{u}_1\|=\|\mathbf{u}_2\|=\sqrt{1+\Delta}.
+\ee
+Therefore
+\begin{align}
+\cos\alpha
+&=\frac{\mathbf{u}_1\cdot\mathbf{u}_2}
+{\|\mathbf{u}_1\|\,\|\mathbf{u}_2\|}\\
+&=\frac{\Delta-1}{\Delta+1}.
+\lb{eq:tangent_angle}
+\end{align}
+
+\begin{proposition}[Angle between tangent rays at the roots]
+For a quadratic with $\Delta>0$, using the standard Euclidean metric in the $(x,y)$ coordinate plane, the interior angle $\alpha$ shown in Fig.~\ref{fig:tangent_angle} satisfies
+\be
+\boxed{\cos\alpha=\frac{\Delta-1}{\Delta+1}}.
+\ee
+\end{proposition}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=1.0,>=Stealth]
+\draw[->] (-4.2,0)--(4.2,0) node[right] {$x$};
+\draw[thick,domain=-3.2:3.2,samples=100] plot (\x,{0.28*\x*\x-1.8});
+\coordinate (L) at (-2.535,0);
+\coordinate (R) at (2.535,0);
+\coordinate (I) at (0,-3.6);
+\draw[red!80!black,thick] ($(L)!-0.35!(I)$)--($(L)!1.25!(I)$);
+\draw[red!80!black,thick] ($(R)!-0.35!(I)$)--($(R)!1.25!(I)$);
+\fill (L) circle (2pt) node[below left] {$x_2$};
+\fill (R) circle (2pt) node[below right] {$x_1$};
+\pic[draw=red!80!black,"$\alpha$",angle radius=8mm,angle eccentricity=1.35] {angle=L--I--R};
+\end{tikzpicture}
+\caption{Interior angle between the tangent rays at the two real roots.}
+\lb{fig:tangent_angle}
+\end{figure}
+
+If instead one chooses the oriented direction vectors $(1,\sqrt{\Delta})$ and $(1,-\sqrt{\Delta})$, the angle obtained is the supplementary angle $\theta=\pi-\alpha$, for which
+\be
+\cos\theta=\frac{1-\Delta}{1+\Delta}.
+\ee
+The sign difference is therefore geometric, not algebraic: it records which pair of rays is being used to define the angle.
+
+Equation~\eqref{eq:tangent_angle} also gives three immediate regimes. If $0<\Delta<1$, then $\alpha$ is obtuse. If $\Delta=1$, the tangents are perpendicular. If $\Delta>1$, the marked interior angle is acute.
+
+\subsection{Algebraic and differential viewpoints}
+
+The vertex calculation illustrates a general principle. Completing the square is global and algebraic: it rewrites the entire function in a canonical form. Differentiation is local and analytic: it identifies the point where the slope vanishes. For quadratics, both routes are exact and elementary, so comparing them is useful. In more complicated functions a completed-square representation may not exist, while the derivative method generalizes widely. Conversely, the algebraic method works before calculus is introduced and often reveals structure that a purely procedural derivative calculation can hide.
+
+\begin{exercise}
+Find the tangent line to $f(x)=2x^2-3x-2$ at each real root and determine the angle between the two tangent rays.
+\end{exercise}
+
+\begin{exercise}
+Prove directly from Eq.~\eqref{eq:tangent_angle} that the tangents are perpendicular if and only if $\Delta=1$.
+\end{exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
